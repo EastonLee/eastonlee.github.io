@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-17T17:54:21-07:00</updated><id>http://localhost:4000/</id><title type="html">EastonLee</title><subtitle>I have a wide span of interest, hope the posts here can throw some light in your life.
+</subtitle><entry><title type="html">First</title><link href="http://localhost:4000/blog/2017/03/17/first.html" rel="alternate" type="text/html" title="First" /><published>2017-03-17T00:00:00-07:00</published><updated>2017-03-17T00:00:00-07:00</updated><id>http://localhost:4000/blog/2017/03/17/first</id><content type="html" xml:base="http://localhost:4000/blog/2017/03/17/first.html">&lt;script src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;My two major concern:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Math Equation&lt;/li&gt;
+  &lt;li&gt;Insert image&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;$$E=mc^2$$ is a very simple equation.&lt;/p&gt;</content><author><name></name></author><summary type="html">My two major concern:</summary></entry></feed>
