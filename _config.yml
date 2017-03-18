@@ -16,7 +16,6 @@
 title: EastonLee
 email: me@eastonlee.com
 description: > # this means to ignore newlines until "baseurl:"
-  I have a wide span of interest, hope the posts here can throw some light in your life.
 baseurl:  # the subpath of your site, e.g. /blog
 url: http://eastonlee.com # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: easton042
@@ -36,3 +35,31 @@ safe: false
 # easton
 permalink: /blog/:year/:month/:day/:title/
 
+# minima theme, deprecated
+show_downloads: false
+google_analytics: UA-58961104-2
+
+# poole theme, being used, just need to modify font-size in _variables.scss
+#html {
+#  font-size: 14px;
+#  line-height: 1.5;
+#}
+#@media (min-width: 38em) {
+#  html {
+#    font-size: 20px;
+#  }
+#}
+tagline:             
+paginate:            1
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+author:
+  name:              Easton Lee
+  url:               http://eastonlee.com/
+  email:             me@eastonlee.com
+# Gems
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+analytics_id: UA-58961104-2
