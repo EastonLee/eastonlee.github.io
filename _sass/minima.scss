@@ -34,35 +34,4 @@ $on-laptop: 800px !default;
 // Import partials.
 @import "minima/base",
 "minima/layout",
-"minima/syntax-highlighting",
-"poole/base";
-
-// new 
-.post-tag {
-    display: inline-block;
-    background: rgba(106, 159, 181, 0.15);
-    padding: 0.5rem;
-    margin-right:.5rem;
-    border-radius: 4px;
-    color: #6a9fb5;
-    font-family: "PT Sans", Helvetica, Arial, sans - serif;
-    font-size: 90%;
-    -webkit-transition: all 0.1 s ease - in -out;
-    -moz-transition: all 0.1 s ease - in -out;
-    transition: all 0.1 s ease - in -out
-}
-
-.post-tag:hover {
-    text-decoration: none;
-    background: #6a9fb5;
-    color: #fff
-}
-
-.post-date {
-    display: inline-block;
-    font-size: 80%;
-    color: #9a9a9a;
-    margin: 0;
-    padding: 0
-}
-
+"minima/syntax-highlighting";

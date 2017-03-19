@@ -13,6 +13,9 @@ Bellow is my note of important concept, it may be incomplete and biased, feel fr
 
 The Syllabus skeleton is left, to remind readers in which section that concept is taught.
 
+* TOC
+{:toc}
+
 # Week 1: Introduction
 
 Supervised Learning and Unsupervised Learning
