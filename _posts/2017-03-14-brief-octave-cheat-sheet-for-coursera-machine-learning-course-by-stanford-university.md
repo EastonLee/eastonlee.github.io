@@ -1,6 +1,7 @@
 ---
 title: Brief Octave Cheat Sheet for Coursera Machine Learning Course by Stanford University
 layout: post
+category: Machine Learning
 ---
 
 I use R with Python a lot, Octave is the chosen language in Coursera course: Machine Learning by Stanford University.

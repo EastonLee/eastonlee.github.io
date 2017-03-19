@@ -1,6 +1,7 @@
 ---
 title: Machine Learning by Stanford University
 layout: post
+category: Machine Learning
 ---
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 

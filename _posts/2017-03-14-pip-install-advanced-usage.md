@@ -1,6 +1,7 @@
 ---
 title: PIP install Advanced Usage
 layout: post
+category: [Python, tools]
 ---
 
 # --no-deps

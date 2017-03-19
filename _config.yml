@@ -18,8 +18,9 @@ email: me@eastonlee.com
 description: > # this means to ignore newlines until "baseurl:"
 baseurl:  # the subpath of your site, e.g. /blog
 url: http://eastonlee.com # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: easton042
+twitter_username: 
 github_username:  easton042
+linkedin_username:  eastonlee
 
 # Build settings
 markdown: kramdown
@@ -49,17 +50,18 @@ google_analytics: UA-58961104-2
 #    font-size: 20px;
 #  }
 #}
-tagline:             
+tagline: experientialism
 paginate:            1
 sass:
   sass_dir:          _sass
   style:            :compressed
-author:
-  name:              Easton Lee
-  url:               http://eastonlee.com/
-  email:             me@eastonlee.com
+author: Easton Lee
+
 # Gems
 gems:
   - jekyll-paginate
   - jekyll-gist
 analytics_id: UA-58961104-2
+
+disqus:
+  shortname: eastonlee
