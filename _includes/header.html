@@ -10,6 +10,9 @@
         </svg>
       </span>
       <div class="trigger">
+<!--         <form action="/search.html" method="get" class="page-link">
+          <input type="text" id="search-box" placeholder="Search" name="query">
+        </form> -->
         {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
         {% for my_page in navigation_pages %}
           {% if my_page.title and my_page.title != '404: Page not found'%}
