@@ -17,21 +17,27 @@ How to hack this ****? Well, you can try SublimeREPL. SublimeREPL provides REPL 
 Let's make things clear:
 
 1. I want SublimeREPL to take place of built-in Build System to run Python files.
-2. I want SublimeREPL to display in a new view, instead of the same view with source code.
-2.1. I need a plugin that is good at Sublime Text layout to split one window into two groups.
-2.1.1 When only one Sublime Text group exists, create new one, then move REPL view into new group.
-2.1.2 When there are two or more groups, just move the REPL tab to the next one.
-2.1.3 When the new group contains only REPL tab, and you close that tab, the group should be destroyed too.
+
+2. I want SublimeREPL to display in a new view, instead of the same view with source code, so I need a plugin that is good at Sublime Text layout to split one window into two groups.
+
+    2.1 When only one Sublime Text group exists, create new one, then move REPL view into new group.
+
+    2.2 When there are two or more groups, just move the REPL tab to the next one.
+
+    2.3 When the new group contains only REPL tab, and you close that tab, the group should be destroyed too.
+
 3. If built-in Build System is able to invoke SublimeREPL and layout plugin, that will be good. Otherwise we have to write our own plugin to invoke Build System then layout plugin.
 
 Problem 1 is easy to solve. First, create a new Build System, configurate it like this, then save it with extension "sublime-build", then you can find this new Build System in top menu.
 
+```json
     {
         "target": "run_existing_window_command", 
         "id": "repl_python_run",
         "selector": "source.python",
         "file": "config/Python/Main.sublime-menu",
     }
+```
 
 Then the new Build System will call REPL command.
 ![](http://7u2owr.com1.z0.glb.clouddn.com/repl_in_same_group.gif)
@@ -41,24 +47,25 @@ Problem 3 is a little tricky, I tried to custom the Build System (above mentione
 
 Now we need to write a Sublime Text plugin to chain all things up. That's not very hard, here are [some document](http://docs.sublimetext.info/en/latest/extensibility/plugins.html) to begin with. Some important concept includes *Conventions for Command Names, Window Commands and Text Commands*, notice the name you define a command class is different from the name you call, and the command file's name doesn't matter (a poor .py file), don't mess up. Below is my command file.
 
+```python
+import sublime
+import sublime_plugin
 
-    import sublime
-    import sublime_plugin
-    
-    
-    class RunPythonReplCommand(sublime_plugin.TextCommand): 
-        def run(self, edit):
-            view = self.view
-            view.window().run_command('build')
-            # segment 1 and 2 are equivalent but segment 1 changes original view's focus
-            # after moving repl to new group
-            # segment 1
-            # view.window().run_command('carry_file_to_pane', {"direction": "right"})
-            # segment 2
-            view.window().run_command('travel_to_pane', {"direction": "right"})
-            view.window().run_command('travel_to_pane', {"direction": "left"})
-            view.window().run_command('move_to_neighboring_group')
-            view.window().run_command('zoom_pane', {"fraction": 0.5})
+
+class RunPythonReplCommand(sublime_plugin.TextCommand): 
+    def run(self, edit):
+        view = self.view
+        view.window().run_command('build')
+        # segment 1 and 2 are equivalent but segment 1 changes original view's focus
+        # after moving repl to new group
+        # segment 1
+        # view.window().run_command('carry_file_to_pane', {"direction": "right"})
+        # segment 2
+        view.window().run_command('travel_to_pane', {"direction": "right"})
+        view.window().run_command('travel_to_pane', {"direction": "left"})
+        view.window().run_command('move_to_neighboring_group')
+        view.window().run_command('zoom_pane', {"fraction": 0.5})
+```
 
 First we need to specify our newly created Build System in Sublime Text's top menu, then when we call `build` command, it will invoke SublimeREPL, a new tab will appear on the right hand side of source code view. The commands `travel_to_pane, travel_to_pane, zoom_pane` are provided by Origami, `move_to_neighboring_group` is built-in. After SublimeREPL tab appears, Origami will try to visit right side's group, if no group is there, Origami will create one, then Origami move focus back, then we move the SublimeREPL tab to the right group, and I specify the right group take 50% width, you can change as you need.
 
