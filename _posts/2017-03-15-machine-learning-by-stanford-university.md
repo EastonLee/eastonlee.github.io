@@ -7,6 +7,9 @@ category: Machine Learning
 
 This course is one of the most famous courses on Coursera. Now I go two weeks ahead of the deadline and reach Week 5, I plan to finish it in the flowing few days. 
 
+Update 03-19:
+I finished the course with full marks today, but this post is still incomplete, I will keep updating it as reviewing this great course.
+
 This course is the perfect choice if you are not satisfied with just being able to drive some machine learning framework to work but also eager to know what is under the hood, this course will teach you the most concrete mathematical principles and equations underlying most AI applications. Overall in this course, Prof. Ng delivered profound knowledge in a comprehensive way. But this course isn't flawless, for example Week 5 uses intuition to explain backpropogation and example applications, which I would say verbose and useless. 
 
 Bellow is my note of important concept, it may be incomplete and biased, feel free to leave comment and let me know, I will keep it updated.
@@ -245,7 +248,6 @@ F1 score = (2 * precision * recall) / (precision + recall)
 ### Quiz: Machine Learning System Design5 questions
 
 TODO
-https://www.coursera.org/learn/machine-learning/exam/vrjOT/machine-learning-system-design
 
 # Week 7: Support Vector Machines
 
@@ -293,7 +295,7 @@ Gaussian kernel, linear kernel.
 #### Random Initialization
 
 #### Choosing the Number of Clusters
-https://www.coursera.org/learn/machine-learning/exam/4sGmv/unsupervised-learning
+
 ## Dimensionality Reduction
 
 ### Motivation
@@ -336,6 +338,8 @@ If $$p(x_i) < \epsilon$$, we say $$x_i$$ is anomalous. We use Gaussian Distribut
 
 ### Gaussian Distribution
 
+$$p(x;\mu, \sigma)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+
 ### Algorithm
 
 ## Building an Anomaly Detection System
@@ -357,25 +361,54 @@ What's difference between Anomaly Detection and Supervised Learning?
 
 ### Choosing What Features to Use
 
+Choose features that might take on unusually large or small values in the event of an anomaly.
+
+If features are not normally distributed, use 1/2 power or log function to normalize them.
+
 ## Multivariate Gaussian Distribution (Optional)
 
 ### Multivariate Gaussian Distribution
 
 ### Anomaly Detection using the Multivariate Gaussian Distribution
 
+$$p(x;\mu ,\Sigma )=\frac { 1 }{ 2\pi ^{ n/2 }\vert \Sigma \vert ^{ 1/2 } } exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))$$
+
+Flag an anomaly if $$p(x)<\epsilon$$
+
+where $$\mu=\frac{1}{m}\sum_{i=1}^{m}x^{(i)}$$
+
+$$\Sigma=\frac{1}{m}\sum_{i=1}^{m}(x^{(i)}-\mu)(x^{(i)}-\mu)^T$$
+
+Origin model is like this:
+
+$$p(x)=p(x_1,;\mu_1,\sigma_1^2)\times p(x_2,;\mu_1,\sigma_1^2)\times\cdots \times p(x_n,;\mu_n,\sigma_n^2)$$
+
+|                                         Original model                                         |                Multivariate Gaussian                |
+|------------------------------------------------------------------------------------------------|-----------------------------------------------------|
+| Manually create features to capture anomalies where x1, x2 take unusual combinations of values | Automatically capture correlations between features |
+| Computationally cheaper (alternatively, scales betters to large n)                             | Computationally more expensive                      |
+| OK even if m(training set size) is small                                                       | Must have m>n, or else $$\Sigma$$ is invertible     |
+|                                                                                                |                                                     |
+
 ## Recommender Systems
 
 ### Predicting Movie Ratings
+
+This section assumes we have movies features, then we train parameters for every user.
 
 ### Problem Formulation
 
 ### Content Based Recommendations
 
-### Collaborative Filtering
+## Collaborative Filtering
 
 ### Collaborative Filtering
+
+This section talks about feature learning, assuming we don't have movies' features yet. But once some users rate one unfeatured movie, we can calculate the movie's feature which makes the cost function minimum.
 
 ### Collaborative Filtering Algorithm
+
+x and theta matrix should both be initialized randomly to break symmetry.
 
 ### Low Rank Matrix Factorization
 
@@ -383,7 +416,62 @@ What's difference between Anomaly Detection and Supervised Learning?
 
 ### Implementational Detail: Mean Normalization
 
+For new users who haven't any rating, thus haven't any theta, you could assign the average rating and theta to them.
+
 ## Review
 
 ### Programming Assignment: Anomaly Detection and Recommender Systems
 
+This assignment is not so interesting, I recommend you another Machine Learning specialization by Washington University on Cousera, I think they teach Recommending System better.
+
+# Week 10: Large Scale Machine Learning
+
+## Gradient Descent with Large Datasets
+
+Observe learning curves over training set and cross validation set, if they converge and reach to the same level, that means your training set is large enough.
+
+### Learning With Large Datasets
+
+Batch gradient descent is more suitable for large dataset.
+
+### Stochastic Gradient Descent
+
+Stochastic gradient descent:
+
+1. randomly shuffle training examples
+2. use single training example to update theta
+3. repeat step 2
+
+Stochastic gradient descent is much faster than batch gradient descent, but is not guaranteed to reach optimum eventually. I think it's hard for stochastic gradient descent to pick a proper learning rate.
+
+### Mini-Batch Gradient Descent
+
+A compromise of batch and stochastic gradient descent.
+
+### Stochastic Gradient Descent Convergence
+
+You can decrease learning rate to guarantee the cost function converge.
+
+## Advanced Topics
+
+### Online Learning
+
+Similar to stochastic gradient descent, every time you use new training set to adjust your model, and only for once. The method can adapt your model when user preference changes.
+
+### Map Reduce and Data Parallelism
+
+Parallel computing gradient on batch, then sum up on central node and update your sigma. This way also speeds up the learning process and enable you to deal with large scale dataset.
+
+# Week 11: Application Example: Photo OCR
+
+## Photo OCR
+
+### Problem Description and Pipeline
+
+### Sliding Windows
+
+### Getting Lots of Data and Artificial Data
+
+### Ceiling Analysis: What Part of the Pipeline to Work on Next
+
+Analyze every component, assume that component and the components before it are perfect, calculate the accuracy of the whole pipeline, so you can find improvement space at every component, if the improvement is little, then it's not very worth it to improve it.
