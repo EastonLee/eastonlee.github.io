@@ -12,6 +12,10 @@ Just a note of this Course, prepared for the coming Quizzes and Final Exam.
 
 The review questions and final exam are not hard at all, I've passed them with full marks. The lab is indeed good for learner to get hand on the Deep Learning process! After this course you will be familiar with TensorFlow and I encourage you to move on and learn higher level framework Keras. -->
 
+Update: 2017-03-24
+
+I think the content of this post is not proper for publishing, because most of the content is not written by me, I just wrap them up.
+
 * TOC
 {:toc}
 
@@ -452,7 +456,7 @@ act.eval(session=sess)
 
 #### Rectified Linear Unit / ReLU
 
-The ReLU is a simple function which operates within the  [0,∞)[0,∞)  interval. For the entirety of the negative value domain, it returns a value of 0, while on the positive value domain, it returns  xx  for any  f(x)f(x) .
+The ReLU is a simple function which operates within the  [0,∞)[0,∞)  interval. For the entirety of the negative value domain, it returns a value of 0, while on the positive value domain, it returns x for any  f(x).
 
 During the initialization process of a Neural Network model, in which weights are distributed at random for each unit, ReLUs will only activate approximately only in 50% of the times -- which saves some processing power. Additionally, the ReLU structure takes care of what is called the Vanishing and Exploding Gradient problem by itself. Another benefit -- if not only marginally relevant to us -- is that this kind of activation function is directly relatable to the nervous system analogy of Neural Networks (this is called Biological Plausibility).
 
@@ -461,6 +465,10 @@ plot_act(1, tf.nn.relu)
 act = tf.nn.relu(tf.matmul(i, w) + b)
 act.eval(session=sess)
 ```
+
+#### Softplus
+
+$$f(x)=\ln(1+e^{x})$$
 
 ## Lab
 
@@ -487,21 +495,368 @@ In this lesson you will learn about:
 
 ## Convolution with Python and Tensor Flow
 
+### Convolution: 1D operation with Python (Numpy/Scipy)
+
+```python
+import numpy as np
+
+h = [2,1,0]
+x = [3,4,5]
+ 
+
+y = np.convolve(x,h)
+y  
+```
+
+There are three methods to apply kernel on the matrix, with padding (full), with padding(same) and without padding(valid)
+
+
+```python
+import numpy as np
+
+x= [6,2]
+h= [1,2,5,4]
+
+y= np.convolve(x,h,"full")  #now, because of the zero padding, the final dimension of the array is bigger
+y= np.convolve(x,h,"same")  #it is same as zero padding, but withgenerates same 
+y= np.convolve(x,h,"valid")  #we will understand why we used the argument valid in the next example
+```
+
+### Convolution: 2D operation with Python (Numpy/Scipy)
+
+```python
+from scipy import signal as sg
+
+I= [[255,   7,  3],
+    [212, 240,  4],
+    [218, 216, 230],]
+
+g= [[-1,1]]
+
+print ('Without zero padding \n')
+print ('{0} \n'.format(sg.convolve( I, g, 'valid')))
+# The 'valid' argument states that the output consists only of those elements 
+# that do not rely on the zero-padding.
+
+print ('With zero padding \n')
+print sg.convolve( I, g)
+```
+
+### Coding with TensorFlow
+
+```python
+import tensorflow as tf
+
+#Building graph
+
+input = tf.Variable(tf.random_normal([1,10,10,1]))
+filter = tf.Variable(tf.random_normal([3,3,1,1]))
+op = tf.nn.conv2d(input, filter, strides=[1, 1, 1, 1], padding='VALID')
+op2 = tf.nn.conv2d(input, filter, strides=[1, 1, 1, 1], padding='SAME')
+
+#Initialization and session
+init = tf.global_variables_initializer()
+with tf.Session() as sess:
+    sess.run(init)
+
+    print("Input \n")
+    print('{0} \n'.format(input.eval()))
+    print("Filter/Kernel \n")
+    print('{0} \n'.format(filter.eval()))
+    print("Result/Feature Map with valid positions \n")
+    result = sess.run(op)
+    print(result)
+    print('\n')
+    print("Result/Feature Map with padding \n")
+    result2 = sess.run(op2)
+    print(result2)
+```
+
+### Convolution applied on images
+
+```python
+# download standard image
+!wget --quiet https://ibm.box.com/shared/static/cn7yt7z10j8rx6um1v9seagpgmzzxnlz.jpg --output-document bird.jpg
+
+#Importing
+import numpy as np
+from scipy import signal
+from scipy import misc
+import matplotlib.pyplot as plt
+from PIL import Image
+
+
+### Load image of your choice on the notebook
+print("Please type the name of your test image after uploading to \
+your notebook (just drag and grop for upload. Please remember to \
+type the extension of the file. Default: bird.jpg")
+
+#raw= raw_input()
+
+im = Image.open('bird.jpg')  # type here your image's name
+
+# uses the ITU-R 601-2 Luma transform (there are several 
+# ways to convert an image to grey scale)
+
+image_gr = im.convert("L")    
+print("\n Original type: %r \n\n" % image_gr)
+
+# convert image to a matrix with values from 0 to 255 (uint8) 
+arr = np.asarray(image_gr) 
+print("After conversion to numerical representation: \n\n %r" % arr) 
+### Activating matplotlib for Ipython
+%matplotlib inline
+
+### Plot image
+
+imgplot = plt.imshow(arr)
+imgplot.set_cmap('gray')  #you can experiment different colormaps (Greys,winter,autumn)
+print("\n Input image converted to gray scale: \n")
+plt.show(imgplot)
+
+kernel = np.array([
+                        [ 0, 1, 0],
+                        [ 1,-4, 1],
+                        [ 0, 1, 0],
+                                     ]) 
+
+grad = signal.convolve2d(arr, kernel, mode='same', boundary='symm')
+%matplotlib inline
+
+print('GRADIENT MAGNITUDE - Feature map')
+
+fig, aux = plt.subplots(figsize=(10, 10))
+aux.imshow(np.absolute(grad), cmap='gray')
+
+type(grad)
+
+grad_biases = np.absolute(grad) + 100
+
+grad_biases[grad_biases > 255] = 255
+%matplotlib inline
+
+print('GRADIENT MAGNITUDE - Feature map')
+
+fig, aux = plt.subplots(figsize=(10, 10))
+aux.imshow(np.absolute(grad_biases), cmap='gray')
+```
+
 ## The MNIST Database
+
+### 1st part: classify MNIST using a simple model
+
+You have two basic options when using TensorFlow to run your code:
+* Build graphs and run session Do all the set-up and THEN execute a session to evaluate tensors and run operations (ops)
+* Interactive session create your coding and run on the fly.
+
+```python
+import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
+sess = tf.InteractiveSession()
+```
 
 ## Multilayer Perceptron with Tensor Flow
 
+**Creating placeholders**
+
+It's a best practice to create placeholders before variable assignments when using TensorFlow. Here we'll create placeholders for inputs ("Xs") and outputs ("Ys").
+
+Placeholder 'X': represents the "space" allocated input or the images.
+
+* Each input has 784 pixels distributed by a 28 width x 28 height matrix   
+* The 'shape' argument defines the tensor size by its dimensions.  
+* 1st dimension = None. Indicates that the batch size, can be of any size.  
+* 2nd dimension = 784. Indicates the number of pixels on a single flattened MNIST image. 
+
+Placeholder 'Y':_ represents the final output or the labels.
+
+* 10 possible classes (0,1,2,3,4,5,6,7,8,9) 
+* The 'shape' argument defines the tensor size by its dimensions. 
+* 1st dimension = None. Indicates that the batch size, can be of any size.  
+* 2nd dimension = 10. Indicates the number of targets/outcomes
+
+dtype for both placeholders: if you not sure, use tf.float32. The limitation here is that the later presented softmax function only accepts float32 or float64 dtypes. For more dtypes, check TensorFlow's documentation here
+
+```python
+x  = tf.placeholder(tf.float32, shape=[None, 784])
+y_ = tf.placeholder(tf.float32, shape=[None, 10])
+# Weight tensor
+W = tf.Variable(tf.zeros([784,10],tf.float32))
+# Bias tensor
+b = tf.Variable(tf.zeros([10],tf.float32))
+# run the op initialize_all_variables using an interactive session
+sess.run(tf.initialize_all_variables())
+#mathematical operation to add weights and biases to the inputs
+tf.matmul(x,W) + b
+cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
+train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
+#Load 50 training examples for each training iteration   
+for i in range(1000):
+    batch = mnist.train.next_batch(50)
+    train_step.run(feed_dict={x: batch[0], y_: batch[1]})
+
+correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+acc = accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels}) * 100
+print("The final accuracy for the simple ANN model is: {} % ".format(acc) )
+sess.close() #finish the session
+```
+
 ## Convolutional Network with Tensor Flow
 
-## Lab
+### 2nd part: Deep Learning applied on MNIST
 
-## Graded Review Questions
+Architecture of our network is:
 
-## Review Questions This content is graded
+* (Input) -> [batch_size, 28, 28, 1] >> Apply 32 filter of [5x5]
+* (Convolutional layer 1) -> [batch_size, 28, 28, 32]
+* (ReLU 1) -> [?, 28, 28, 32]
+* (Max pooling 1) -> [?, 14, 14, 32]
+* (Convolutional layer 2) -> [?, 14, 14, 64]
+* (ReLU 2) -> [?, 14, 14, 64]
+* (Max pooling 2) -> [?, 7, 7, 64]
+* [fully connected layer 3] -> [1x1024]
+* [ReLU 3] -> [1x1024]
+* [Drop out] -> [1x1024]
+* [fully connected layer 4] -> [1x10]
+
+0) Input - MNIST dataset
+
+1) Convolutional and Max-Pooling
+
+2) Convolutional and Max-Pooling
+
+3) Fully Connected Layer
+
+4) Processing - Dropout
+
+5) Readout layer - Fully Connected
+
+6) Outputs - Classified digits
+
+```python
+import tensorflow as tf
+
+# finish possible remaining session
+sess.close()
+
+#Start interactive session
+sess = tf.InteractiveSession()
+from tensorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
+width = 28 # width of the image in pixels 
+height = 28 # height of the image in pixels
+flat = width * height # number of pixels in one image 
+class_output = 10 # number of possible classifications for the problem
+x  = tf.placeholder(tf.float32, shape=[None, flat])
+y_ = tf.placeholder(tf.float32, shape=[None, class_output])
+x_image = tf.reshape(x, [-1,28,28,1])  # The input image is a 28 pixels by 28 pixels and 1 channel (grayscale). In this case the first dimension is the batch number of the image (position of the input on the batch) and can be of any size (due to -1)
+```
+
+**[Every layer explanation](https://courses.bigdatauniversity.com/courses/course-v1:BigDataUniversity+ML0120EN+2016/courseware/76d637cbe8024e509dc445df847e6c3a/d2529e01786a412fb009daef4b002a48/)**
+
+```python
+W_conv1 = tf.Variable(tf.truncated_normal([5, 5, 1, 32], stddev=0.1))
+b_conv1 = tf.Variable(tf.constant(0.1, shape=[32])) # need 32 biases for 32 outputs
+convolve1= tf.nn.conv2d(x_image, W_conv1, strides=[1, 1, 1, 1], padding='SAME') + b_conv1
+h_conv1 = tf.nn.relu(convolve1)
+h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME') #max_pool_2x2
+
+W_conv2 = tf.Variable(tf.truncated_normal([5, 5, 32, 64], stddev=0.1))
+b_conv2 = tf.Variable(tf.constant(0.1, shape=[64])) #need 64 biases for 64 outputs
+convolve2= tf.nn.conv2d(layer1, W_conv2, strides=[1, 1, 1, 1], padding='SAME')+ b_conv2
+h_conv2 = tf.nn.relu(convolve2)
+h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME') #max_pool_2x2
+layer2= h_pool2
+layer2_matrix = tf.reshape(layer2, [-1, 7*7*64])
+W_fc1 = tf.Variable(tf.truncated_normal([7 * 7 * 64, 1024], stddev=0.1))
+b_fc1 = tf.Variable(tf.constant(0.1, shape=[1024])) # need 1024 biases for 1024 outputs
+fcl3=tf.matmul(layer2_matrix, W_fc1) + b_fc1
+h_fc1 = tf.nn.relu(fcl3)
+layer3= h_fc1
+keep_prob = tf.placeholder(tf.float32)
+layer3_drop = tf.nn.dropout(layer3, keep_prob)
+W_fc2 = tf.Variable(tf.truncated_normal([1024, 10], stddev=0.1)) #1024 neurons
+b_fc2 = tf.Variable(tf.constant(0.1, shape=[10])) # 10 possibilities for digits [0,1,2,3,4,5,6,7,8,9]
+fcl4=tf.matmul(layer3_drop, W_fc2) + b_fc2
+y_conv= tf.nn.softmax(fcl4)
+layer4= y_conv
+```
+
+Define functions and train the model
+
+```python
+import numpy as np
+layer4_test =[[0.9, 0.1, 0.1],[0.9, 0.1, 0.1]]
+y_test=[[1.0, 0.0, 0.0],[1.0, 0.0, 0.0]]
+np.mean( -np.sum(y_test * np.log(layer4_test),1))
+cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(layer4), reduction_indices=[1]))
+train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
+correct_prediction = tf.equal(tf.argmax(layer4,1), tf.argmax(y_,1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+sess.run(tf.global_variables_initializer())
+
+for i in range(1100):
+    batch = mnist.train.next_batch(50)
+    if i%100 == 0:
+        train_accuracy = accuracy.eval(feed_dict={x:batch[0], y_: batch[1], keep_prob: 1.0})
+        print("step %d, training accuracy %g"%(i, float(train_accuracy)))
+    train_step.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
+print("test accuracy %g"%accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
+kernels = sess.run(tf.reshape(tf.transpose(W_conv1, perm=[2, 3, 0,1]),[32,-1]))
+
+from utils import tile_raster_images
+import matplotlib.pyplot as plt
+from PIL import Image
+%matplotlib inline
+image = Image.fromarray(tile_raster_images(kernels, img_shape=(5, 5) ,tile_shape=(4, 8), tile_spacing=(1, 1)))
+### Plot image
+plt.rcParams['figure.figsize'] = (18.0, 18.0)
+imgplot = plt.imshow(image)
+imgplot.set_cmap('gray')  
+import numpy as np
+plt.rcParams['figure.figsize'] = (5.0, 5.0)
+sampleimage = mnist.test.images[1]
+plt.imshow(np.reshape(sampleimage,[28,28]), cmap="gray")
+
+# check the first convolution layer
+
+ActivatedUnits = sess.run(convolve1,feed_dict={x:np.reshape(sampleimage,[1,784],order='F'),keep_prob:1.0})
+filters = ActivatedUnits.shape[3]
+plt.figure(1, figsize=(20,20))
+n_columns = 6
+n_rows = np.math.ceil(filters / n_columns) + 1
+for i in range(filters):
+    plt.subplot(n_rows, n_columns, i+1)
+    plt.title('Filter ' + str(i))
+    plt.imshow(ActivatedUnits[0,:,:,i], interpolation="nearest", cmap="gray")
+
+# check the second convolution layer
+ActivatedUnits = sess.run(convolve2,feed_dict={x:np.reshape(sampleimage,[1,784],order='F'),keep_prob:1.0})
+filters = ActivatedUnits.shape[3]
+plt.figure(1, figsize=(20,20))
+n_columns = 8
+n_rows = np.math.ceil(filters / n_columns) + 1
+for i in range(filters):
+    plt.subplot(n_rows, n_columns, i+1)
+    plt.title('Filter ' + str(i))
+    plt.imshow(ActivatedUnits[0,:,:,i], interpolation="nearest", cmap="gray")
+
+sess.close() #finish the session
+
+```
 
 # Module 3 - Recurrent Neural Network
 
 ## Learning Objectives
+
+In this lesson you will learn about:
+
+* The Recurrent Neural Network Model 
+* Long Short-Term Memory
+* Recursive Neural Tensor Network Theory
+* Applying Recurrent Networks to Language Modelling
 
 ## The Sequential Problem
 
