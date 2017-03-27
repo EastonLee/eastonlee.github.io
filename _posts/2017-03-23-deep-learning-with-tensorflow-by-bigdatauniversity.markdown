@@ -1,20 +1,20 @@
 ---
 title: Deep Learning with TensorFlow by BigDataUniversity
 layout: post
-published: true
+published: false
 category: [Deep Learning, Machine Learning]
 ---
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 Just a note of this Course, prepared for the coming Quizzes and Final Exam.
 
-<!-- Update: 2017-03-24
-
-The review questions and final exam are not hard at all, I've passed them with full marks. The lab is indeed good for learner to get hand on the Deep Learning process! After this course you will be familiar with TensorFlow and I encourage you to move on and learn higher level framework Keras. -->
-
 Update: 2017-03-24
 
 I think the content of this post is not proper for publishing, because most of the content is not written by me, I just wrap them up.
+
+Update: 2017-03-27
+
+I anticipated I could finish this course with full marks, but I just got 98% marks, anyway I've learned Deep Learning with TensorFlow. Next step is to move on to Keras to make Deep Learning easier and finish my TRADEBOT project.
 
 * TOC
 {:toc}
@@ -1850,6 +1850,28 @@ In this lesson you will learn about:
 
 ## RBMs and Autoencoders
 
+Introduction
+
+Restricted Boltzmann Machine (RBM): RBMs are shallow neural nets that learn to reconstruct data by themselves in an unsupervised fashion.
+
+How does it work?
+
+Simply, RBM takes the inputs and translates them to a set of numbers that represents them. Then, these numbers can be translated back to reconstruct the inputs. Through several forward and backward passes, the RBM will be trained, and a trained RBM can reveal which features are the most important ones when detecting patterns.
+
+Why are RBMs important?
+
+It can automatically extract meaningful features from a given input.
+
+What are the applications of RBM?
+
+RBM is useful for Collaborative Filtering, dimensionality reduction, classification, regression, feature learning, topic modeling and even Deep Belief Networks.
+
+Is RBM a generative model?
+
+RBM is a generative model. What is a generative model?
+
+First, lets see what is different between discriminative and generative model:
+
 ## Initializing a Restricted Boltzmann Machine
 
 ## Training a Restricted Bolztmann Machine
@@ -1858,13 +1880,257 @@ In this lesson you will learn about:
 
 ## Lab
 
-## Graded Review Questions
+```python
+import urllib
+response = urllib.urlopen('http://deeplearning.net/tutorial/code/utils.py')
+content = response.read()
+target = open('utils.py', 'w')
+target.write(content)
+target.close()
+import tensorflow as tf
+import numpy as np
+from tensorflow.examples.tutorials.mnist import input_data
+#!pip install pillow
+from PIL import Image
+#import Image
+from utils import tile_raster_images
+import matplotlib.pyplot as plt
+%matplotlib inline
 
-## Review Questions This content is graded
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+trX, trY, teX, teY = mnist.train.images, mnist.train.labels, mnist.test.images, mnist.test.labels
+vb = tf.placeholder("float", [784])
+hb = tf.placeholder("float", [500])
+W = tf.placeholder("float", [784, 500])
+X = tf.placeholder("float", [None, 784])
+_h0= tf.nn.sigmoid(tf.matmul(X, W) + hb)  #probabilities of the hidden units
+h0 = tf.nn.relu(tf.sign(_h0 - tf.random_uniform(tf.shape(_h0)))) #sample_h_given_X
+with  tf.Session() as sess:
+    a= tf.constant([0.7, 0.1, 0.8, 0.2])
+    print sess.run(a)
+    b=sess.run(tf.random_uniform(tf.shape(a)))
+    print b
+    print sess.run(a-b)
+    print sess.run(tf.sign( a - b))
+    print sess.run(tf.nn.relu(tf.sign( a - b)))
+
+_v1 = tf.nn.sigmoid(tf.matmul(h0, tf.transpose(W)) + vb) 
+v1 = tf.nn.relu(tf.sign(_v1 - tf.random_uniform(tf.shape(_v1)))) #sample_v_given_h
+h1 = tf.nn.sigmoid(tf.matmul(v1, W) + hb)
+
+alpha = 1.0
+w_pos_grad = tf.matmul(tf.transpose(X), h0)
+w_neg_grad = tf.matmul(tf.transpose(v1), h1)
+CD = (w_pos_grad - w_neg_grad) / tf.to_float(tf.shape(X)[0])
+update_w = W + alpha * CD
+update_vb = vb + alpha * tf.reduce_mean(X - v1, 0)
+update_hb = hb + alpha * tf.reduce_mean(h0 - h1, 0)
+
+err = tf.reduce_mean(tf.square(X - v1))
+cur_w = np.zeros([784, 500], np.float32)
+cur_vb = np.zeros([784], np.float32)
+cur_hb = np.zeros([500], np.float32)
+prv_w = np.zeros([784, 500], np.float32)
+prv_vb = np.zeros([784], np.float32)
+prv_hb = np.zeros([500], np.float32)
+sess = tf.Session()
+init = tf.global_variables_initializer()
+sess.run(init)
+
+sess.run(err, feed_dict={X: trX, W: prv_w, vb: prv_vb, hb: prv_hb})
+#Parameters
+epochs = 5
+batchsize = 100
+weights = []
+errors = []
+
+for epoch in range(epochs):
+    for start, end in zip( range(0, len(trX), batchsize), range(batchsize, len(trX), batchsize)):
+        batch = trX[start:end]
+        cur_w = sess.run(update_w, feed_dict={ X: batch, W: prv_w, vb: prv_vb, hb: prv_hb})
+        cur_vb = sess.run(update_vb, feed_dict={  X: batch, W: prv_w, vb: prv_vb, hb: prv_hb})
+        cur_hb = sess.run(update_hb, feed_dict={ X: batch, W: prv_w, vb: prv_vb, hb: prv_hb})
+        prv_w = cur_w
+        prv_vb = cur_vb
+        prv_hb = cur_hb
+        if start % 10000 == 0:
+            errors.append(sess.run(err, feed_dict={X: trX, W: cur_w, vb: cur_vb, hb: cur_hb}))
+            weights.append(cur_w)
+    print 'Epoch: %d' % epoch,'reconstruction error: %f' % errors[-1]
+plt.plot(errors)
+plt.xlabel("Batch Number")
+plt.ylabel("Error")
+plt.show()
+uw = weights[-1].T
+print uw # a weight matrix of shape (500,784)
+tile_raster_images(X=cur_w.T, img_shape=(28, 28), tile_shape=(25, 20), tile_spacing=(1, 1))
+import matplotlib.pyplot as plt
+from PIL import Image
+%matplotlib inline
+image = Image.fromarray(tile_raster_images(X=cur_w.T, img_shape=(28, 28) ,tile_shape=(25, 20), tile_spacing=(1, 1)))
+### Plot image
+plt.rcParams['figure.figsize'] = (18.0, 18.0)
+imgplot = plt.imshow(image)
+imgplot.set_cmap('gray')  
+from PIL import Image
+image = Image.fromarray(tile_raster_images(X=cur_w.T[10:11], img_shape=(28, 28),tile_shape=(1, 1), tile_spacing=(1, 1)))
+### Plot image
+plt.rcParams['figure.figsize'] = (4.0, 4.0)
+imgplot = plt.imshow(image)
+imgplot.set_cmap('gray')  
+sample_case = trX[1:2]
+img = Image.fromarray(tile_raster_images(X=sample_case, img_shape=(28, 28),tile_shape=(1, 1), tile_spacing=(1, 1)))
+plt.rcParams['figure.figsize'] = (2.0, 2.0)
+imgplot = plt.imshow(img)
+imgplot.set_cmap('gray')  #you can experiment different colormaps (Greys,winter,autumn)
+hh0 = tf.nn.sigmoid(tf.matmul(X, W) + hb)
+vv1 = tf.nn.sigmoid(tf.matmul(hh0, tf.transpose(W)) + vb)
+feed = sess.run(hh0, feed_dict={ X: sample_case, W: prv_w, hb: prv_hb})
+rec = sess.run(vv1, feed_dict={ hh0: feed, W: prv_w, vb: prv_vb})
+img = Image.fromarray(tile_raster_images(X=rec, img_shape=(28, 28),tile_shape=(1, 1), tile_spacing=(1, 1)))
+plt.rcParams['figure.figsize'] = (2.0, 2.0)
+imgplot = plt.imshow(img)
+imgplot.set_cmap('gray') 
+
+```
+
+```python
+!wget -O moviedataset.zip http://files.grouplens.org/datasets/movielens/ml-1m.zip
+!unzip -o moviedataset.zip -d /resources/data
+
+#Tensorflow library. Used to implement machine learning models
+import tensorflow as tf
+#Numpy contains helpful functions for efficient mathematical calculations
+import numpy as np
+#Dataframe manipulation library
+import pandas as pd
+#Graph plotting library
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+#Loading in the movies dataset
+movies_df = pd.read_csv('/resources/data/ml-1m/movies.dat', sep='::', header=None)
+movies_df.head()
+
+#Loading in the ratings dataset
+ratings_df = pd.read_csv('/resources/data/ml-1m/ratings.dat', sep='::', header=None)
+ratings_df.head()
+
+movies_df.columns = ['MovieID', 'Title', 'Genres']
+ratings_df.columns = ['UserID', 'MovieID', 'Rating', 'Timestamp']
+
+movies_df.head()
+
+ratings_df.head()
+len(movies_df)
+movies_df.tail()
+movies_df['List Index'] = movies_df.index
+movies_df.head()
+#Merging movies_df with ratings_df by MovieID
+merged_df = movies_df.merge(ratings_df, on='MovieID')
+#Dropping unecessary columns
+merged_df = merged_df.drop('Timestamp', axis=1).drop('Title', axis=1).drop('Genres', axis=1)
+#Displaying the result
+merged_df.head()
+#Group up by UserID
+userGroup = merged_df.groupby('UserID')
+userGroup.first().head()
+#Amount of users used for training
+amountOfUsedUsers = 1000
+#Creating the training list
+trX = []
+#For each user in the group
+for userID, curUser in userGroup:
+    #Create a temp that stores every movie's rating
+    temp = [0]*len(movies_df)
+    #For each movie in curUser's movie list
+    for num, movie in curUser.iterrows():
+        #Divide the rating by 5 and store it
+        temp[movie['List Index']] = movie['Rating']/5.0
+    #Now add the list of ratings into the training list
+    trX.append(temp)
+    #Check to see if we finished adding in the amount of users for training
+    if amountOfUsedUsers == 0:
+        break
+    amountOfUsedUsers -= 1
+hiddenUnits = 20
+visibleUnits = len(movies_df)
+vb = tf.placeholder("float", [visibleUnits]) #Number of unique movies
+hb = tf.placeholder("float", [hiddenUnits]) #Number of features we're going to learn
+W = tf.placeholder("float", [visibleUnits, hiddenUnits])
+#Phase 1: Input Processing
+v0 = tf.placeholder("float", [None, visibleUnits])
+_h0= tf.nn.sigmoid(tf.matmul(v0, W) + hb)
+h0 = tf.nn.relu(tf.sign(_h0 - tf.random_uniform(tf.shape(_h0))))
+#Phase 2: Reconstruction
+_v1 = tf.nn.sigmoid(tf.matmul(h0, tf.transpose(W)) + vb) 
+v1 = tf.nn.relu(tf.sign(_v1 - tf.random_uniform(tf.shape(_v1))))
+h1 = tf.nn.sigmoid(tf.matmul(v1, W) + hb)
+#Learning rate
+alpha = 1.0
+#Create the gradients
+w_pos_grad = tf.matmul(tf.transpose(v0), h0)
+w_neg_grad = tf.matmul(tf.transpose(v1), h1)
+#Calculate the Contrastive Divergence to maximize
+CD = (w_pos_grad - w_neg_grad) / tf.to_float(tf.shape(v0)[0])
+#Create methods to update the weights and biases
+update_w = W + alpha * CD
+update_vb = vb + alpha * tf.reduce_mean(v0 - v1, 0)
+update_hb = hb + alpha * tf.reduce_mean(h0 - h1, 0)
+err = v0 - v1
+err_sum = tf.reduce_mean(err * err)
+#Current weight
+cur_w = np.zeros([visibleUnits, hiddenUnits], np.float32)
+#Current visible unit biases
+cur_vb = np.zeros([visibleUnits], np.float32)
+#Current hidden unit biases
+cur_hb = np.zeros([hiddenUnits], np.float32)
+#Previous weight
+prv_w = np.zeros([visibleUnits, hiddenUnits], np.float32)
+#Previous visible unit biases
+prv_vb = np.zeros([visibleUnits], np.float32)
+#Previous hidden unit biases
+prv_hb = np.zeros([hiddenUnits], np.float32)
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+epochs = 15
+batchsize = 100
+errors = []
+for i in range(epochs):
+    for start, end in zip( range(0, len(trX), batchsize), range(batchsize, len(trX), batchsize)):
+        batch = trX[start:end]
+        cur_w = sess.run(update_w, feed_dict={v0: batch, W: prv_w, vb: prv_vb, hb: prv_hb})
+        cur_vb = sess.run(update_vb, feed_dict={v0: batch, W: prv_w, vb: prv_vb, hb: prv_hb})
+        cur_nb = sess.run(update_hb, feed_dict={v0: batch, W: prv_w, vb: prv_vb, hb: prv_hb})
+        prv_w = cur_w
+        prv_vb = cur_vb
+        prv_hb = cur_nb
+    errors.append(sess.run(err_sum, feed_dict={v0: trX, W: cur_w, vb: cur_vb, hb: cur_nb}))
+plt.plot(errors)
+plt.ylabel('Error')
+plt.xlabel('Epoch')
+plt.show()
+#Selecting the input user
+inputUser = [trX[75]]
+#Feeding in the user and reconstructing the input
+hh0 = tf.nn.sigmoid(tf.matmul(v0, W) + hb)
+vv1 = tf.nn.sigmoid(tf.matmul(hh0, tf.transpose(W)) + vb)
+feed = sess.run(hh0, feed_dict={ v0: inputUser, W: prv_w, hb: prv_hb})
+rec = sess.run(vv1, feed_dict={ hh0: feed, W: prv_w, vb: prv_vb})
+movies_df["Recommendation Score"] = rec[0]
+movies_df.sort(["Recommendation Score"], ascending=False).head(20)
+```
 
 # Module 5 - Autoencoders
 
 ## Learning Objectives
+
+In this lesson you will learn about:  
+
+* Introduction to Autoencoders and Applications
+* Autoencoder Structure
+* Autoencoders
+* Deep Belief Network
 
 ## Introduction to Autoencoders
 
@@ -1876,26 +2142,365 @@ In this lesson you will learn about:
 
 ## Lab
 
-## Graded Review Questions
+### Autoencoder
 
-## Review Questions This content is graded
+```python
+from __future__ import division, print_function, absolute_import
 
-## Course Summary
+import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
 
-## Course Summary
+# Import MINST data
+from tensorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
+learning_rate = 0.01
+training_epochs = 20
+batch_size = 256
+display_step = 1
+examples_to_show = 10
 
-## Appendix
+# Network Parameters
+n_hidden_1 = 256 # 1st layer num features
+n_hidden_2 = 128 # 2nd layer num features
+n_input = 784 # MNIST data input (img shape: 28*28)
 
-## Resources and Materials
+# tf Graph input (only pictures)
+X = tf.placeholder("float", [None, n_input])
 
-## Final Exam
+weights = {
+    'encoder_h1': tf.Variable(tf.random_normal([n_input, n_hidden_1])),
+    'encoder_h2': tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2])),
+    'decoder_h1': tf.Variable(tf.random_normal([n_hidden_2, n_hidden_1])),
+    'decoder_h2': tf.Variable(tf.random_normal([n_hidden_1, n_input])),
+}
+biases = {
+    'encoder_b1': tf.Variable(tf.random_normal([n_hidden_1])),
+    'encoder_b2': tf.Variable(tf.random_normal([n_hidden_2])),
+    'decoder_b1': tf.Variable(tf.random_normal([n_hidden_1])),
+    'decoder_b2': tf.Variable(tf.random_normal([n_input])),
+}
 
-## Instructions
+# Building the encoder
+def encoder(x):
+    # Encoder first layer with sigmoid activation #1
+    layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights['encoder_h1']),
+                                   biases['encoder_b1']))
+    # Encoder second layer with sigmoid activation #2
+    layer_2 = tf.nn.sigmoid(tf.add(tf.matmul(layer_1, weights['encoder_h2']),
+                                   biases['encoder_b2']))
+    return layer_2
 
-## Final Exam
+# Building the decoder
+def decoder(x):
+    # Decoder first layer with sigmoid activation #1
+    layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights['decoder_h1']),
+                                   biases['decoder_b1']))
+    # Decoder second layer with sigmoid activation #2
+    layer_2 = tf.nn.sigmoid(tf.add(tf.matmul(layer_1, weights['decoder_h2']),
+                                   biases['decoder_b2']))
+    return layer_2
 
-## Timed Exam
+# Construct model
+encoder_op = encoder(X)
+decoder_op = decoder(encoder_op)
+
+# Prediction
+y_pred = decoder_op
+# Targets (Labels) are the input data.
+y_true = X
+
+# Define loss and optimizer, minimize the squared error
+cost = tf.reduce_mean(tf.pow(y_true - y_pred, 2))
+optimizer = tf.train.RMSPropOptimizer(learning_rate).minimize(cost)
+
+# Initializing the variables
+init = tf.global_variables_initializer()
+
+# Launch the graph
+# Using InteractiveSession (more convenient while using Notebooks)
+sess = tf.InteractiveSession()
+sess.run(init)
+
+total_batch = int(mnist.train.num_examples/batch_size)
+# Training cycle
+for epoch in range(training_epochs):
+    # Loop over all batches
+    for i in range(total_batch):
+        batch_xs, batch_ys = mnist.train.next_batch(batch_size)
+        # Run optimization op (backprop) and cost op (to get loss value)
+        _, c = sess.run([optimizer, cost], feed_dict={X: batch_xs})
+    # Display logs per epoch step
+    if epoch % display_step == 0:
+        print("Epoch:", '%04d' % (epoch+1),
+              "cost=", "{:.9f}".format(c))
+
+print("Optimization Finished!")
+# Applying encode and decode over test set
+encode_decode = sess.run(
+    y_pred, feed_dict={X: mnist.test.images[:examples_to_show]})
+
+# Compare original images with their reconstructions
+f, a = plt.subplots(2, 10, figsize=(10, 2))
+for i in range(examples_to_show):
+    a[0][i].imshow(np.reshape(mnist.test.images[i], (28, 28)))
+    a[1][i].imshow(np.reshape(encode_decode[i], (28, 28)))
+```
+
+### Deep Belief Network
+
+```python
+#urllib is used to download the utils file from deeplearning.net
+import urllib
+response = urllib.urlopen('http://deeplearning.net/tutorial/code/utils.py')
+content = response.read()
+target = open('utils.py', 'w')
+target.write(content)
+target.close()
+#Import the math function for calculations
+import math
+#Tensorflow library. Used to implement machine learning models
+import tensorflow as tf
+#Numpy contains helpful functions for efficient mathematical calculations
+import numpy as np
+#Image library for image manipulation
+from PIL import Image
+#import Image
+#Utils file
+from utils import tile_raster_images
+#Class that defines the behavior of the RBM
+class RBM(object):
+    
+    def __init__(self, input_size, output_size):
+        #Defining the hyperparameters
+        self._input_size = input_size #Size of input
+        self._output_size = output_size #Size of output
+        self.epochs = 5 #Amount of training iterations
+        self.learning_rate = 1.0 #The step used in gradient descent
+        self.batchsize = 100 #The size of how much data will be used for training per sub iteration
+        
+        #Initializing weights and biases as matrices full of zeroes
+        self.w = np.zeros([input_size, output_size], np.float32) #Creates and initializes the weights with 0
+        self.hb = np.zeros([output_size], np.float32) #Creates and initializes the hidden biases with 0
+        self.vb = np.zeros([input_size], np.float32) #Creates and initializes the visible biases with 0
+
+
+    #Fits the result from the weighted visible layer plus the bias into a sigmoid curve
+    def prob_h_given_v(self, visible, w, hb):
+        #Sigmoid 
+        return tf.nn.sigmoid(tf.matmul(visible, w) + hb)
+
+    #Fits the result from the weighted hidden layer plus the bias into a sigmoid curve
+    def prob_v_given_h(self, hidden, w, vb):
+        return tf.nn.sigmoid(tf.matmul(hidden, tf.transpose(w)) + vb)
+    
+    #Generate the sample probability
+    def sample_prob(self, probs):
+        return tf.nn.relu(tf.sign(probs - tf.random_uniform(tf.shape(probs))))
+
+    #Training method for the model
+    def train(self, X):
+        #Create the placeholders for our parameters
+        _w = tf.placeholder("float", [self._input_size, self._output_size])
+        _hb = tf.placeholder("float", [self._output_size])
+        _vb = tf.placeholder("float", [self._input_size])
+        
+        prv_w = np.zeros([self._input_size, self._output_size], np.float32) #Creates and initializes the weights with 0
+        prv_hb = np.zeros([self._output_size], np.float32) #Creates and initializes the hidden biases with 0
+        prv_vb = np.zeros([self._input_size], np.float32) #Creates and initializes the visible biases with 0
+
+        
+        cur_w = np.zeros([self._input_size, self._output_size], np.float32)
+        cur_hb = np.zeros([self._output_size], np.float32)
+        cur_vb = np.zeros([self._input_size], np.float32)
+        v0 = tf.placeholder("float", [None, self._input_size])
+        
+        #Initialize with sample probabilities
+        h0 = self.sample_prob(self.prob_h_given_v(v0, _w, _hb))
+        v1 = self.sample_prob(self.prob_v_given_h(h0, _w, _vb))
+        h1 = self.prob_h_given_v(v1, _w, _hb)
+        
+        #Create the Gradients
+        positive_grad = tf.matmul(tf.transpose(v0), h0)
+        negative_grad = tf.matmul(tf.transpose(v1), h1)
+        
+        #Update learning rates for the layers
+        update_w = _w + self.learning_rate *(positive_grad - negative_grad) / tf.to_float(tf.shape(v0)[0])
+        update_vb = _vb +  self.learning_rate * tf.reduce_mean(v0 - v1, 0)
+        update_hb = _hb +  self.learning_rate * tf.reduce_mean(h0 - h1, 0)
+        
+        #Find the error rate
+        err = tf.reduce_mean(tf.square(v0 - v1))
+        
+        #Training loop
+        with tf.Session() as sess:
+            sess.run(tf.initialize_all_variables())
+            #For each epoch
+            for epoch in range(self.epochs):
+                #For each step/batch
+                for start, end in zip(range(0, len(X), self.batchsize),range(self.batchsize,len(X), self.batchsize)):
+                    batch = X[start:end]
+                    #Update the rates
+                    cur_w = sess.run(update_w, feed_dict={v0: batch, _w: prv_w, _hb: prv_hb, _vb: prv_vb})
+                    cur_hb = sess.run(update_hb, feed_dict={v0: batch, _w: prv_w, _hb: prv_hb, _vb: prv_vb})
+                    cur_vb = sess.run(update_vb, feed_dict={v0: batch, _w: prv_w, _hb: prv_hb, _vb: prv_vb})
+                    prv_w = cur_w
+                    prv_hb = cur_hb
+                    prv_vb = cur_vb
+                error=sess.run(err, feed_dict={v0: X, _w: cur_w, _vb: cur_vb, _hb: cur_hb})
+                print 'Epoch: %d' % epoch,'reconstruction error: %f' % error
+            self.w = prv_w
+            self.hb = prv_hb
+            self.vb = prv_vb
+
+    #Create expected output for our DBN
+    def rbm_outpt(self, X):
+        input_X = tf.constant(X)
+        _w = tf.constant(self.w)
+        _hb = tf.constant(self.hb)
+        out = tf.nn.sigmoid(tf.matmul(input_X, _w) + _hb)
+        with tf.Session() as sess:
+            sess.run(tf.global_variables_initializer())
+            return sess.run(out)
+
+#Getting the MNIST data provided by Tensorflow
+from tensorflow.examples.tutorials.mnist import input_data
+
+#Loading in the mnist data
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+trX, trY, teX, teY = mnist.train.images, mnist.train.labels, mnist.test.images,\
+    mnist.test.labels
+
+RBM_hidden_sizes = [500, 200 , 50 ] #create 2 layers of RBM with size 400 and 100
+
+#Since we are training, set input as training data
+inpX = trX
+
+#Create list to hold our RBMs
+rbm_list = []
+
+#Size of inputs is the number of inputs in the training set
+input_size = inpX.shape[1]
+
+#For each RBM we want to generate
+for i, size in enumerate(RBM_hidden_sizes):
+    print 'RBM: ',i,' ',input_size,'->', size
+    rbm_list.append(RBM(input_size, size))
+    input_size = size
+
+#For each RBM in our list
+for rbm in rbm_list:
+    print 'New RBM:'
+    #Train a new one
+    rbm.train(inpX) 
+    #Return the output layer
+    inpX = rbm.rbm_outpt(inpX)
+
+import numpy as np
+import math
+import tensorflow as tf
+
+
+class NN(object):
+    
+    def __init__(self, sizes, X, Y):
+        #Initialize hyperparameters
+        self._sizes = sizes
+        self._X = X
+        self._Y = Y
+        self.w_list = []
+        self.b_list = []
+        self._learning_rate =  1.0
+        self._momentum = 0.0
+        self._epoches = 10
+        self._batchsize = 100
+        input_size = X.shape[1]
+        
+        #initialization loop
+        for size in self._sizes + [Y.shape[1]]:
+            #Define upper limit for the uniform distribution range
+            max_range = 4 * math.sqrt(6. / (input_size + size))
+            
+            #Initialize weights through a random uniform distribution
+            self.w_list.append(
+                np.random.uniform( -max_range, max_range, [input_size, size]).astype(np.float32))
+            
+            #Initialize bias as zeroes
+            self.b_list.append(np.zeros([size], np.float32))
+            input_size = size
+      
+    #load data from rbm
+    def load_from_rbms(self, dbn_sizes,rbm_list):
+        #Check if expected sizes are correct
+        assert len(dbn_sizes) == len(self._sizes)
+        
+        for i in range(len(self._sizes)):
+            #Check if for each RBN the expected sizes are correct
+            assert dbn_sizes[i] == self._sizes[i]
+        
+        #If everything is correct, bring over the weights and biases
+        for i in range(len(self._sizes)):
+            self.w_list[i] = rbm_list[i].w
+            self.b_list[i] = rbm_list[i].hb
+
+    #Training method
+    def train(self):
+        #Create placeholders for input, weights, biases, output
+        _a = [None] * (len(self._sizes) + 2)
+        _w = [None] * (len(self._sizes) + 1)
+        _b = [None] * (len(self._sizes) + 1)
+        _a[0] = tf.placeholder("float", [None, self._X.shape[1]])
+        y = tf.placeholder("float", [None, self._Y.shape[1]])
+        
+        #Define variables and activation functoin
+        for i in range(len(self._sizes) + 1):
+            _w[i] = tf.Variable(self.w_list[i])
+            _b[i] = tf.Variable(self.b_list[i])
+        for i in range(1, len(self._sizes) + 2):
+            _a[i] = tf.nn.sigmoid(tf.matmul(_a[i - 1], _w[i - 1]) + _b[i - 1])
+        
+        #Define the cost function
+        cost = tf.reduce_mean(tf.square(_a[-1] - y))
+        
+        #Define the training operation (Momentum Optimizer minimizing the Cost function)
+        train_op = tf.train.MomentumOptimizer(
+            self._learning_rate, self._momentum).minimize(cost)
+        
+        #Prediction operation
+        predict_op = tf.argmax(_a[-1], 1)
+        
+        #Training Loop
+        with tf.Session() as sess:
+            #Initialize Variables
+            sess.run(tf.global_variables_initializer())
+            
+            #For each epoch
+            for i in range(self._epoches):
+                
+                #For each step
+                for start, end in zip(
+                    range(0, len(self._X), self._batchsize), range(self._batchsize, len(self._X), self._batchsize)):
+                    
+                    #Run the training operation on the input data
+                    sess.run(train_op, feed_dict={
+                        _a[0]: self._X[start:end], y: self._Y[start:end]})
+                
+                for j in range(len(self._sizes) + 1):
+                    #Retrieve weights and biases
+                    self.w_list[j] = sess.run(_w[j])
+                    self.b_list[j] = sess.run(_b[j])
+                
+                print "Accuracy rating for epoch " + str(i) + ": " + str(np.mean(np.argmax(self._Y, axis=1) ==
+                              sess.run(predict_op, feed_dict={_a[0]: self._X, y: self._Y})))
+
+nNet = NN(RBM_hidden_sizes, trX, trY)
+nNet.load_from_rbms(RBM_hidden_sizes,rbm_list)
+nNet.train()
+```
 
 ## Completion Certificate
 
-## Completion Certificate
+98% marks.
+
+https://courses.bigdatauniversity.com/certificates/43e77da987884309a79793d548602144
