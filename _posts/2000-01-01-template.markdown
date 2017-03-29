@@ -1,13 +1,21 @@
 ---
 title: Draft Template
 layout: post
-published: false
+published: true
 category: [misc]
 ---
-
+<!-- <link rel="stylesheet" type="text/css" href="/css/mermaid.css"> -->
 * TOC
 {:toc}
 
-this is my post template.
+# This is my post template.
+
+{% mermaid %}
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+{% endmermaid %}
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

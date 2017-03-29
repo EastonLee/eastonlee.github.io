@@ -61,7 +61,11 @@ author: Easton Lee
 gems:
   - jekyll-paginate
   - jekyll-gist
+  - jekyll-mermaid
 analytics_id: UA-58961104-2
 
 disqus:
   shortname: eastonlee
+
+mermaid:
+  src: '/js/mermaid.min.js'
