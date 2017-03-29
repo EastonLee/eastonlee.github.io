@@ -21,7 +21,6 @@ gem "minima", "~> 2.0"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
-   gem "jekyll-mermaid"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -33,4 +32,4 @@ require 'open-uri'
 versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
 # easton: gem can't find github-pages 130
-gem 'github-pages', '133'# versions['github-pages']
+gem 'github-pages', versions['github-pages']
