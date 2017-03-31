@@ -11,6 +11,8 @@ category: [misc]
 
 # This is my post template.
 
+[](http://knsv.github.io/mermaid/live_editor/)
+
 <div class="mermaid">
 graph TD;
 
@@ -63,4 +65,4 @@ gantt
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.js"></script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

@@ -4,7 +4,7 @@ layout: post
 published: true
 category: [Deep Learning, Machine Learning, Course Notes]
 ---
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 This is a note of a Deep Learning course I just got a certificate from: Deep Learning with TensorFlow by BigDataUniversity.
 
