@@ -28,6 +28,9 @@ markdown: kramdown
 theme: minima
 gems:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -58,10 +61,6 @@ sass:
   style:            :compressed
 author: Easton Lee
 
-# Gems
-gems:
-  - jekyll-paginate
-  - jekyll-gist
 analytics_id: UA-58961104-2
 
 disqus:

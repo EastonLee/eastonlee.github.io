@@ -1,7 +1,7 @@
 ---
 title: Draft Template
 layout: post
-published: true
+published: false
 category: [misc]
 ---
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.css">

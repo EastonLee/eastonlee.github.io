@@ -15,7 +15,8 @@
         </form> -->
         {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
         {% for my_page in navigation_pages %}
-          {% if my_page.title and my_page.title != '404: Page not found'%}
+          {% if my_page.title and my_page.title != '404: Page not found' 
+          and my_page.title != 'Blog' %}
             <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
           {% endif %}
         {% endfor %}

@@ -33,3 +33,5 @@ versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
 # easton: gem can't find github-pages 130
 gem 'github-pages', versions['github-pages']
+
+gem 'jekyll-sitemap'
