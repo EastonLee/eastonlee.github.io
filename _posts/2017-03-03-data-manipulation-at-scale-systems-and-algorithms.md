@@ -1,7 +1,7 @@
 ---
 title: "Data Manipulation at Scale: Systems and Algorithms"
 layout: post
-category: Big Data
+category: [Big Data, Course Notes]
 ---
 
 I've finished a Data Science course on Coursera recently, *Data Manipulation at Scale: Systems and Algorithms*, which is taught by  Bill Howe.

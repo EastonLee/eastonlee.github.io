@@ -1,7 +1,7 @@
 ---
 title: Bitcoin Trader bot, Part 1
 layout: post
-category: Machine Learning
+category: [Machine Learning, BitCoin]
 ---
 
 I have an idea recently: predict Bitcoin's future price, and use that predication to assist my trading decision, and make profit from it. To tell if this is profitable and how profitable in academic term is hard for me, but do it is not a big deal for me. Let's just build one Bitcoin Trader bot.

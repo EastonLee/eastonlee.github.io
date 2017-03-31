@@ -1,20 +1,14 @@
 ---
 title: Deep Learning with TensorFlow by BigDataUniversity
 layout: post
-published: false
-category: [Deep Learning, Machine Learning]
+published: true
+category: [Deep Learning, Machine Learning, Course Notes]
 ---
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-Just a note of this Course, prepared for the coming Quizzes and Final Exam.
+This is a note of a Deep Learning course I just got a certificate from: Deep Learning with TensorFlow by BigDataUniversity.
 
-Update: 2017-03-24
-
-I think the content of this post is not proper for publishing, because most of the content is not written by me, I just wrap them up.
-
-Update: 2017-03-27
-
-I anticipated I could finish this course with full marks, but I just got 98% marks, anyway I've learned Deep Learning with TensorFlow. Next step is to move on to Keras to make Deep Learning easier and finish my TRADEBOT project.
+This course can only give you a simple taste of how to use TensorFlow and part of essential concepts like tensor, variable, placeholder, operation, layer, etc. **It can't teach you the underlying mathematical principles or how to design a reasonably stacked neural network.** Besides this course I still encourage you attend Machine Learning, Neural Network courses to deepen your understanding and enable yourself wisely organize your network architecture.
 
 * TOC
 {:toc}
