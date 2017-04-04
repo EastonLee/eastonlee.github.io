@@ -45,20 +45,20 @@ Bellow is the outputs of Word2Vec and Wordnet when I look up the word 'beautiful
 | wonderful                 | picturesque              |
 | prettiest                 | pretty-pretty            |
 
-'bitch', of course I tested some informal words, we just got 3 synonyms from Wordnet, it seems that Wordnet take it too serious, LOL. Word2Vec gives us more various results, most of which are curses and some are off topic in some degree.
+'weirdo', of course I tested some informal words, we just got 3 synonyms from Wordnet, it seems that Wordnet take it too serious, LOL. Word2Vec gives us more various results, most of which are curses and some are off topic in some degree.
 
 | Output of Word2Vec | Output of Wordnet |
 |--------------------|-------------------|
-| slut               | cunt              |
-| motherfucker       | gripe             |
-| twat               | backbite          |
-| cunt               |                   |
-| nigga              |                   |
-| whore              |                   |
-| weirdo             |                   |
-| dork               |                   |
-| bugger             |                   |
+| crybaby            | creep             |
+| klutz              | crazy             |
+| cheater            |                   |
+| voyeur             |                   |
+| bummer             |                   |
 | wanker             |                   |
+| trekkie            |                   |
+| lycanthrope        |                   |
+| masochist          |                   |
+| motherfucker       |                   |
 
 'strengthen', I can't believe Wordnet just gives one output.
 
