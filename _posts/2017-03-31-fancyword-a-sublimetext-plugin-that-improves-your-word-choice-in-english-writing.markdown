@@ -14,13 +14,13 @@ FancyWord is a Sublime Text 3 dictionary plugin that improves your word choice i
 
 FancyWord 是一个辅助用户在英文写作中更好地选词的 SublimeText 插件。
 
-![FancyWord_Demo](https://cdn.eastonlee.com/FancyWord_Demo.gif)
+![FancyWord_Demo](https://eastonlee.b0.upaiyun.com/FancyWord_Demo.gif)
 
 Welcome to fork, PR or open issues on [GitHub](https://github.com/easton042/FancyWord)
 
 If you find it useful, please consider donating.
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5FBKLLDUX9KKY&lc=US&item_name=EastonLee&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
-![支付宝捐赠](https://cdn.eastonlee.com/alipay_donation_small.JPG){:width="100px" }
+![支付宝捐赠](https://eastonlee.b0.upaiyun.com/alipay_donation.JPG){:width="100px" }
 
 # Motivation
 
