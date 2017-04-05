@@ -10,7 +10,7 @@ category: [Word2Vec, Machine Learning, SublimeText, tools, English, NLP]
 
 # FancyWord
 
-FancyWord is a Sublime Text 3 plugin that improves your word choice in writing.
+FancyWord is a Sublime Text 3 dictionary plugin that improves your word choice in English writing.
 
 FancyWord 是一个辅助用户在英文写作中更好地选词的 SublimeText 插件。
 
