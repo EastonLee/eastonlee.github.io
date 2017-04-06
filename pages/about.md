@@ -5,5 +5,15 @@ permalink: /about/
 navigation_weight: 999
 ---
 
+I'm a software engineer, currently learning and applying Machine Learning and Data Science passionately. 
+
+I'm also actively contributing to open source projects, check out my projects on [GitHub](https://github.com/easton042)
+
+# Contact
+
+I really enjoy talking with people who share an interest in machine learning and data science, if you have any questions, feel free to contact me at [me@eastonlee.com](mailto:me@eastonlee.com).
+
+Know more about me:
+
 * [GitHub](https://github.com/easton042)
 * [LinkedIn](https://linkedin.com/in/eastonlee)

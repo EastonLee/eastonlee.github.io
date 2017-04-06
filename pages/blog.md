@@ -1,6 +1,6 @@
 ---
 layout: home
 title: Blog
-permalink: /blogs
+permalink: /blog/index.html
 navigation_weight: -1
 ---
