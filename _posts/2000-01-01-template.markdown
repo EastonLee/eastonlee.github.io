@@ -9,6 +9,12 @@ category: [misc]
 * TOC
 {:toc}
 
+This is inline equation: $E=mc^2$
+
+This is block/display equation, with my config, it must be in new line and double dollar signs surrounded: 
+
+$$E=mc^2$$
+
 # This is my post template.
 
 [](http://knsv.github.io/mermaid/live_editor/)
@@ -63,6 +69,19 @@ gantt
     Add gantt diagram to demo page      : 20h
     Add another diagram to demo page    : 48h
 </div>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.js"></script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
