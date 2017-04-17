@@ -17,6 +17,10 @@ Here I record my regular process of installing OSes.
 1. Copy the directories `boot` and `grub` into your Flash Disk or internal partition. `boot` is for GRUB2 images, mods and configurations, `grub` is for GRUB4DOS, I just keep GRUB4DOS in case and GRUB2 is enough in theory.
 1. Also carry your handy tools with you, I have a [list](./tools_you_need.md) here for you.
 
+# Install macOS
+
+I found I've never been in a situation where I have to install a macOS, I think that's one reason I like macOS better.
+
 # Install Linux
 
 GRUB2 is able to boot Linux iso file using MEMDISK of Syslinux, but often ends up with initramfs error. So you'd better Google the Linux distribution and figure out the location of its kernel file and initrd file, then use GRUB2 `loopback, linux and initrd` commands to mount and boot that iso. The rest installing is too easy.
