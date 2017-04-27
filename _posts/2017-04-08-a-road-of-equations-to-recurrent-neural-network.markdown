@@ -146,6 +146,7 @@ $a=x⋅y=&#124;&#124;x&#124;&#124; &#124;&#124;y&#124;&#124;cos(θ)$
 * Multiplication is associative
 
 $$A ⋅( B ⋅ C ) = ( A ⋅B ) ⋅C$$
+
 * Multiplication is not commutative
 
 $$A ⋅ B ≠ B ⋅ A$$ (generally)
@@ -327,6 +328,7 @@ TODO: more RNN network and math
 * Zachary C. Lipton and John Berkowitz for their paper: [A Critical Review of Recurrent Neural Networks for Sequence Learning](https://arxiv.org/pdf/1506.00019.pdf)
 -->
 
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -339,4 +341,3 @@ TODO: more RNN network and math
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
 </script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
