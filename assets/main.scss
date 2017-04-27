@@ -39,7 +39,7 @@ $on-laptop:        800px;
 @import "minima",
 "poole/_base";
 
-// new 
+// easton
 .post-tag {
     display: inline-block;
     background: rgba(106, 159, 181, 0.15);
@@ -66,4 +66,12 @@ $on-laptop:        800px;
     color: #9a9a9a;
     margin: 0;
     padding: 0
+}
+
+h1
+{
+    border-bottom:1px solid #CCC;
+    width:100%;
+    //float:left;
+    padding-bottom:3px;
 }
