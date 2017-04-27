@@ -146,7 +146,6 @@ $a=x⋅y=&#124;&#124;x&#124;&#124; &#124;&#124;y&#124;&#124;cos(θ)$
 * Multiplication is associative
 
 $$A ⋅( B ⋅ C ) = ( A ⋅B ) ⋅C$$
-
 * Multiplication is not commutative
 
 $$A ⋅ B ≠ B ⋅ A$$ (generally)
@@ -329,15 +328,3 @@ TODO: more RNN network and math
 -->
 
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { availableFonts: ["TeX"] }
-  });
-</script>
