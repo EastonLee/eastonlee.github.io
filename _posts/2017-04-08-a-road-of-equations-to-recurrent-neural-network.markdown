@@ -22,21 +22,21 @@ Equation Normalization:
 
 <!--[Washington University CSS490 Winter 2012 lecture slide: ](http://courses.washington.edu/css490/2012.Winter/lecture_slides/02_math_essentials.pdf)-->
 
-| Notion                      | Meaning                                                                                                                          |
+| Notation                    | Meaning                                                                                                                          |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | a ∈ A                       | set membership                                                                                                                   |
 | &#124; B &#124;             | A cardinality: number of items in set B                                                                                          |
 | &#124;&#124; v &#124;&#124; | norm: length of vector v                                                                                                         |
-| $$\Sigma$$                | summation                                                                                                                        |
-| $$\int$$                  | integral                                                                                                                         |
-| $$\Re$$                   | the set of real numbers                                                                                                          |
-| $$\Re^{n}$$               | real number space of dimension n<br>n = 2 : plane or 2-space<br>n = 3 : 3- (dimensional) space <br>n > 3 : n-space or hyperspace |
-| x, y, z, u, v               | vector (bold, lower case)                                                                                                        |
-| A, B, X                     | matrix (bold, upper case)                                                                                                        |
-| $$y=f(x)$$                | function(map):assigns unique value in range of y to each value in domain of x                                                    |
-| $$dy / dx$$               | derivative of y with respect to single                                                                                           |
-| $$y=f(x)$$                | function on multiple variables,i.e. a vector of variables; function in n-space                                                   |
-| $$∂y / ∂x_i$$             | partial derivative of y with respect to element i of vector x                                                                    |
+| $$\Sigma$$                  | summation                                                                                                                        |
+| $$\int$$                    | integral                                                                                                                         |
+| $$\Re$$                     | the set of real numbers                                                                                                          |
+| $$\Re^{n}$$                 | real number space of dimension n<br>n = 2 : plane or 2-space<br>n = 3 : 3- (dimensional) space <br>n > 3 : n-space or hyperspace |
+| **x, y, z, u, v**           | vector (bold, lower case)                                                                                                        |
+| **A, B, X**                 | matrix (bold, upper case)                                                                                                        |
+| $$y=f(x)$$                  | function(map):assigns unique value in range of y to each value in domain of x                                                    |
+| $$dy / dx$$                 | derivative of y with respect to single                                                                                           |
+| $$y=f(x)$$                  | function on multiple variables,i.e. a vector of variables; function in n-space                                                   |
+| $$∂y / ∂x_i$$               | partial derivative of y with respect to element i of vector x                                                                    |
 | \\(&#124;Ω&#124;\\)         | the set of possible outcomes O                                                                                                   |
 | F                           | the set of possible events E                                                                                                     |
 | P                           | the probability distribution                                                                                                     |
