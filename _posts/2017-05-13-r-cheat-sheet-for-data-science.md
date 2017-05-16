@@ -241,9 +241,31 @@ The ... argument is also used when the number of the arguments can't be known in
 
 # Scoping Rules - Symbol Binding
 
+R will search symbols in `.GlobalEnv` first, if doesn't find the needed symbols, it will continues searching in packages loaded into workspace (print those packages by `search()`).
+
+R has separated namespaces for functions and nonfunctions, so you can have a function and a variable both called the same name.
+
 # Scoping Rules - R Scoping Rules
 
+When a free variable in a function can't be found the function, R will search in parent environment, and down the sequence of parent environment till the variable is found (top environment is global environment or package namespace depending where the variable is defined). If still can't find the variable, search in the `search()` list, until all the .GlobalEnv and packages are searched. If still can't find, an error will occur.
+
 # Scoping Rules - Optimization Example (OPTIONAL)
+
+R uses lexical scoping instead of dynamic scoping.
+
+```r
+y <- 10
+
+f <- function(x) {
+    y <- 2
+    y^2 + g(x)
+}
+
+g <- function(x) {
+    x*y
+}
+```
+f(3) = 34, g only finds its free variable in defining environment, not the calling environment. Scheme, Perl, Python and Common Lisp all support lexical scoping.
 
 # Coding Standards
 
