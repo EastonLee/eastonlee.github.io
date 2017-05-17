@@ -70,7 +70,131 @@ Confound in experimental design: Researchers found shoe size is correlated with 
 
 # Course 3: Getting and Cleaning Data:
 
+## Week 1:
+
+Packages for read data source:
+
+* xls and xlsx
+
+    ```r
+    install.packages("xlsx")
+    library(xlsx)
+    data <- read.xls("./data.xlsx", sheetIndex=1, header=TRUE)
+    ```
+* xml
+
+    ```r
+    install.packages(XML)
+    library(XML)
+    fileUrl <- "http://www.w3schools.com/xml/simple.xml"
+    doc <- xmlTreeParse(fileUrl, useInternal=TRUE)
+    rootNode <- xmlRoot(doc)
+    xmlName(rootNode)
+    ```
+* JSON
+
+    ```r
+    library(jsonlite)
+    jsonData <- fromJSON("https://api.github.com/users/jtleek/repos")
+    names(jsonData)
+    ```
+
+For data.table, in the square bracket, after the comma is the expression argument, instead of the column index. The expression arguments take the free variables as the attributes of the original data.table.
+
+data.table can have keys, keys are used to select or join.
+
+```r
+DT <- data.table(x=rep(c("a","b","c"), each=100), y=rnorm(300))
+setkey(DT, x)
+DT["a"] # will return all rows x="a"
+
+DT1 <- data.table(x=c("a","a","b","dt1"), y=1:4)
+DT2 <- data.table(x=c("a","b","dt2"), z=5:7)
+setkey(DT1,x);setkey(DT2,x)
+merge(DT1,DT2)
+#    x y z
+# 1: a 1 5
+# 2: a 2 5
+# 3: b 3 6
+```
+
 # Course 4: Exploratory Data Analysis:
+
+## Week 1
+
+**Principles of Analytic Graphics**
+
+1. Show comparisons
+1. Show causality, mechanism, explanation
+1. Show multivariate data
+1. Integrate multiple models of evidence
+1. Describe and document the evidence
+1. Content is king
+
+**Often used summarization and plot function**
+
+```r
+summary(pollution$pm25)
+boxplot(pollution$pm25, col='blue')
+abline(h=12)
+
+hist(pollution$pm25, col='green', breaks=100)
+abline(v=12, lwd=2)
+abline(v=median(pollution$pm25), col='magenta', lwd=4)
+rug(pollution$pm25)
+
+barplot(table(pollution$region), col='wheat', main='Numbers of Counties in Each Region')
+
+# multiple boxplots
+boxplot(pm25~region, data=pollution, col='red') 
+
+# multiple histgrams
+par(mfrow=c(2,1), mar=c(4,4,2,1))
+hist(subset(pollution, region=='east')$pm25, col='green')
+hist(subset(pollution, region=='west')$pm25, col='green')
+
+# scatter plot
+with(pollution, plot(latitude, pm25, col=region))
+abline(h=12, lwd=2, lty=2)
+
+# multiple scatterplots
+par(mfrow=c(1,2), mar=c(5,4,2,1))
+with(subset(pollution, region=='west'), plot(latitude, pm25, main='West'))
+with(subset(pollution, region=='east'), plot(latitude, pm25, main='East'))
+```
+
+**Three Plotting System**
+
+1. Base Plotting System
+
+    ```r
+    library(datasets)
+    data(cars)
+    with(cars, plot(speed, dist))
+    ```
+
+1. The Lattice System
+
+    ```r
+    library(lattice)
+    state <- data.frame(state.x77, region=state.region)
+    xyplot(Life.Exp~Income | region, data=state, layout=c(4,1))
+    ```
+1. The ggplot2 System
+
+    ```r
+    library(ggplot2)
+    data(mpg)
+    qplot(displ, hwy, data=mpg)
+    ```
+**Many base plot functions share a set of parameters**
+
+* pch: the plotting symbol (default is open circle)
+* lty: the line type (default is solid line, can be dashed, dotted, etc.)
+* lwd: the line width, specified as an integer multiple
+* col: the plotting color, specified as an integer number, string, or hex code; the `colors()` function gives you a vector of colors by name
+* xlab: character string for x-axis label
+* ylab: character string for y-axis label
 
 # Course 5: Reproducible Research:
 
