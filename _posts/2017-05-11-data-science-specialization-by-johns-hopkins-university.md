@@ -196,6 +196,17 @@ with(subset(pollution, region=='east'), plot(latitude, pm25, main='East'))
 * xlab: character string for x-axis label
 * ylab: character string for y-axis label
 
+**Some important base graphics parameters**
+
+The `par()` function is used to specify *global* graphics parameters that affect all plots in the R session.
+
+* las: the orientation of the axis labels on the plot
+* bg: the background color
+* mar: the margin size
+* oma: the outer margin size (default 0 for all sides)
+* mfrow: the number of plots per row, column (plots are filled row-wise)
+* mfcol: the number of plots per row, column (plots are filled column-wise)
+
 # Course 5: Reproducible Research:
 
 # Course 6: Statistical Inference:
