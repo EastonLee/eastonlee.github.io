@@ -84,14 +84,23 @@ Use the five-number summary (which gives the median, IQR and range) for all othe
 
 ## Module 5: Examining Relationships
 
-**For possibilities for role-type classification**
+**Four possibilities for role-type classification and corresponding data display and numerical summaries**
 
 1. Categorical explanatory and quantitative response
+
+    Data display: Side-by-side boxplots
+    Numerical summaries: Descriptive statistics
 1. Categorical explanatory and categorical response
+
+    Data display: Two-way table, supplemented by
+    Numerical summaries: Conditional percentages.
 1. Quantitative explanatory and quantitative response
+
+
 1. Quantitative explanatory and categorical response
 
 ![role-type classification table](https://oli.cmu.edu/repository/webcontent/0dc371000ae1c686566a243ea7db95b7/_u2_summarizing_data/_m2_examining_relationships/webcontent/relationships_overview1.gif)
+
 
 # UNIT 3: Producing Data:
 
