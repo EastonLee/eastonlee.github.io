@@ -89,17 +89,47 @@ Use the five-number summary (which gives the median, IQR and range) for all othe
 1. Categorical explanatory and quantitative response
 
     Data display: Side-by-side boxplots
+
     Numerical summaries: Descriptive statistics
+
 1. Categorical explanatory and categorical response
 
     Data display: Two-way table, supplemented by
+
     Numerical summaries: Conditional percentages.
+
 1. Quantitative explanatory and quantitative response
 
+    Data display: Scatterplot
+
+    Numerical summaries: Use Correlation Coefficient to describe direction, form and strength, and least-square regression line (including intercept and slope) to accurate describe the pattern of data points.
+
+    A special case of the relationship between two quantitative variables is the **linear** relationship. In this case, a straight line simply and adequately summarizes the relationship.
+
+    When the scatterplot displays a linear relationship, we supplement it with the **correlation coefficient (r)**, which measures the **strength** and direction of a linear relationship between two quantitative variables. The correlation ranges between -1 and 1. Values near -1 indicate a strong negative linear relationship, values near 0 indicate a weak linear relationship, and values near 1 indicate a strong positive linear relationship.
+    
+    The correlation is only an appropriate numerical measure for linear relationships, and is sensitive to outliers. Therefore, the correlation should only be used as a supplement to a scatterplot (after we look at the data).
+    
+    The most commonly used criterion for finding a line that summarizes the pattern of a linear relationship is "least squares." The least squares regression line has the smallest sum of squared vertical deviations of the data points from the line.
+    
+    The slope of the least squares regression line can be interpreted as the average change in the response variable when the explanatory variable increases by 1 unit.
+    
+    The least squares regression line predicts the value of the response variable for a given value of the explanatory variable. Extrapolation is prediction of values of the explanatory variable that fall outside the range of the data. Since there is no way of knowing whether a relationship holds beyond the range of the explanatory variable in the data, extrapolation is not reliable, and should be avoided.
 
 1. Quantitative explanatory and categorical response
 
+    This course didn't discuss this topic, let me guess,
+
+    Data display: clustered scatterplot
+
+    Numerical summaries: Decision tree or Machine Learning methods (Softmax, etc.)
+
 ![role-type classification table](https://oli.cmu.edu/repository/webcontent/0dc371000ae1c686566a243ea7db95b7/_u2_summarizing_data/_m2_examining_relationships/webcontent/relationships_overview1.gif)
+
+**Causation and Lurking variables**
+
+An important principle: **Association does not imply causation!**
+
 
 
 # UNIT 3: Producing Data:
