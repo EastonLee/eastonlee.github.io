@@ -24,6 +24,8 @@ There are two version of this course in CMU, the other one is "Probability & Sta
 
 At the end of April 2005, a poll was conducted (by ABC News and the Washington Post) for the purpose of learning the opinions of U.S. adults about the death penalty.
 
+**The 4-step process**
+
 1. Producing Data: A (representative) sample of 1,082 U.S. adults was chosen, and each adult was asked whether he or she favored or opposed the death penalty.
 
 2. Exploratory Data Analysis (EDA): The collected data were summarized, and it was found that 65% of the sampled adults favor the death penalty for persons convicted of murder.
@@ -130,7 +132,9 @@ Use the five-number summary (which gives the median, IQR and range) for all othe
 
 An important principle: **Association does not imply causation!**
 
+A **lurking variable** is a variable that was not included in the analysis, but that could substantially change the interpretation if it was included.
 
+Whenever including lurking variables cause the change of the direction of an association, this is call **Simpson's Paradox**.
 
 # UNIT 3: Producing Data:
 
