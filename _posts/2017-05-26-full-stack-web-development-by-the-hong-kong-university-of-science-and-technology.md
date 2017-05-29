@@ -34,4 +34,53 @@ The opposite problem is when an element that can have content is empty. If it is
 
 **Global variable**: if you assign a variable without declaring it with `var` in any place whether in a function or not, the variable automatically become a global variable, and the whole script can access it.
 
+## Week 3: Advanced JavaScript
+
+There are 3 kinds of **for loops**:
+
+1. for
+2. for ... in
+
+    like this:
+
+    ```javascript
+    var continents = ["Austrilia", "Africa", "Antarctica", "Eurasia", "America"];
+    for ( var index in continents) {}
+    ```
+
+    remember that `index` is a number, not an object in the `continents` array.
+
+    In other situation like this:
+
+    ```javascript
+    var onePerson = {initials: "DR", age: 40, job: "Professor"};
+    for ( var property in onePerson ) {}
+    ```
+
+    The `property` gives the left hand side of the object `onePerson`.
+
+3. for ... of 
+
+    ```javascript
+    var continents = ["Austrilia", "Africa", "Antarctica", "Eurasia", "America"];
+    for ( var continent in continents) {}
+    ```
+
+    Here the `continent` is each element of the array `continents`, this syntax is equivalent to the Python `for ... in ...`.
+
+**splice** can be used to remove or add or replace some element from or into an array.
+
+* To remove elements at a position: `array.splice(startPosition, quantity)`, and it returns the removed elements.
+* To add an element before a position: `array.splice(position, 0, element)`, and it returns empty array `[]`.
+* To replace an element: `array.splice(position, quantity, elements)`, and it returns the removed elements.
+
+**array functions**
+
+* `forEach`
+* `map`
+
+**Whitespace Nodes**
+
+There may be some text nodes which contains only whitespace, sometimes this is troublesome.
+
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
