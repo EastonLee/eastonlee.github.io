@@ -83,4 +83,37 @@ There are 3 kinds of **for loops**:
 
 There may be some text nodes which contains only whitespace, sometimes this is troublesome.
 
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+# Course 2: Front-End Web UI Frameworks and Tools
+
+## Week 1: Front-end Web UI Frameworks Overview: Bootstrap
+
+The `container` class uses fixed width depending on the screen size, `container-fluid` uses the full width of screen.
+
+These 3 lines of code must be contained in `head` section prior to enabling Bootstrap.
+
+```html
+    <meta charset="uft-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+**Media Queries** are the CSS technology to apply some styles based on the size of the **viewport** e.g.
+
+```css
+@media screen and (min-width:600px){
+    /* CSS customized for desktop */
+}
+```
+
+**Viewport**
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+The `viewport` meta tag:
+
+* Ensure the screen width is set to the device width and content is rendered with the width in mind.
+* Designing the websites responsive to the size of the viewport (Bootstrap grid system).
+
+If you don't specify classes for some screen size, for example, you only specify `col-sm-5` for an element, then on medium and large screen, Bootstrap will choose the specification for smaller screen, which is `col-sm-5` class in this case.
