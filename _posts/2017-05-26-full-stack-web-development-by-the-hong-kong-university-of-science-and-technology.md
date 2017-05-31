@@ -7,7 +7,7 @@ category: [Full Stack, Web, HTML, CSS, JavaScript]
 
 Finally a non-science course, purely technical one, I can't wait to make my hands dirty on web development. I think every developer whether he/she is front end or back end knows web development more or less, but to make your site/single page application professional and pretty, you have to go through some courses systematically.
 
-Most concepts are straight forward and simple, so I will only take note of those which are tricky and exceptional.
+Most concepts are straightforward and simple, so I will only take note of those which are tricky and exceptional.
 
 * TOC
 {:toc}
@@ -117,3 +117,9 @@ The `viewport` meta tag:
 * Designing the websites responsive to the size of the viewport (Bootstrap grid system).
 
 If you don't specify classes for some screen size, for example, you only specify `col-sm-5` for an element, then on medium and large screen, Bootstrap will choose the specification for smaller screen, which is `col-sm-5` class in this case.
+
+## Week 2: Bootstrap CSS Components
+
+## Week 3: Bootstrap Javascript Components
+
+## Week 4: Web Tools
