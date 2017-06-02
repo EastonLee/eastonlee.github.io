@@ -118,8 +118,25 @@ The `viewport` meta tag:
 
 If you don't specify classes for some screen size, for example, you only specify `col-sm-5` for an element, then on medium and large screen, Bootstrap will choose the specification for smaller screen, which is `col-sm-5` class in this case.
 
-## Week 2: Bootstrap CSS Components
+## Week 2: Bootstrap CSS Components; Week 3: Bootstrap Javascript Components; Week 4: Web Tools
 
-## Week 3: Bootstrap Javascript Components
+I'm tired of Bootstrap's tedious class names, I won't put details here about them.
 
-## Week 4: Web Tools
+# Course 4: Server-side Development with NodeJS
+
+## Week 1: Introduction to Server-side Development
+
+**JavaScript** doesn't provide standard library, **CommanJS API** fills this gap by defining API for common application needs. It defines a module format, **Node** follows module specification.
+
+* Each file is its own module.
+* The *module* variable gives access to the current module definition in a file.
+* The *module.exports* determines the export of the current module.
+* The *require* function is used to import a module.
+
+When you import **core modules or external modules**, do like this `require("module_name")`. When you are importing an external module, Node.js will look for the external module in `./node_modules/ or ../node_modules/ or ../../node_modules/ ...` until the module is found.
+
+## Week 2: Data, Data, Where art Thou Data?
+
+## Week 3: Halt! Who goes there?
+
+## Week 4: Backend as a Service (BaaS)
