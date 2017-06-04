@@ -135,7 +135,26 @@ I'm tired of Bootstrap's tedious class names, I won't put details here about the
 
 When you import **core modules or external modules**, do like this `require("module_name")`. When you are importing an external module, Node.js will look for the external module in `./node_modules/ or ../node_modules/ or ../../node_modules/ ...` until the module is found.
 
+**Stateless server**: 
+
+* Server side should not track the client side state:
+
+    Every request is a new request from the client side.
+
+* Client side should track its own state:
+
+    * E.g. using cookies; client side database
+    * Every request must include sufficient information so server side can serve up requested information
+    * Client side MVC setup
+
 ## Week 2: Data, Data, Where art Thou Data?
+
+**Four broad categories of NoSQL Databases**
+
+* Document databases (e.g., MongoDB)
+* Key-value databases (e.g., Redis)
+* Column family databases (e.g., Cassadra)
+* Graph databases (e.g., Neo4J)
 
 ## Week 3: Halt! Who goes there?
 
