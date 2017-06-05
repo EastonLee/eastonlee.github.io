@@ -230,13 +230,13 @@ Functions are saved in files with the file-ending .m for MATLAB.
 
 # Logic operations
 
-not equal ~=
+not equal `~=`
 
-logical AND &&
+logical AND `&&`
 
-logical OR ||
+logical OR `||`
 
-logical XOR xor(1,0)
+logical XOR `xor(1,0)`
 
 
 **Reference**:
