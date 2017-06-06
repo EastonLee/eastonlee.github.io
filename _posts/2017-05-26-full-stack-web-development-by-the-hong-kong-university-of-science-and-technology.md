@@ -122,6 +122,14 @@ If you don't specify classes for some screen size, for example, you only specify
 
 I'm tired of Bootstrap's tedious class names, I won't put details here about them.
 
+# Course 3: Front-End JavaScript Frameworks: AngularJS
+
+## Week 1: Front-End Javascript Frameworks: AngularJS Overview
+
+`ng-init` is used to 
+* Evaluate an expression
+* Initialize a JavaScript variable
+
 # Course 4: Server-side Development with NodeJS
 
 ## Week 1: Introduction to Server-side Development
