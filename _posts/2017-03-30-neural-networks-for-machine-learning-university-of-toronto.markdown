@@ -111,9 +111,7 @@ Instead, we can use Softmax, its cost function is $$E=-t\log(y)-(1-t)\log(1-y)$$
 ## Ways to deal with the large number of possible outputs
 
 
-# Week 5
-
-Object recognition with neural nets. In this module we look at why object recognition is difficult.  
+# Week 5: Object recognition with neural nets.
 
 ## Why object recognition is difficult
 
@@ -130,40 +128,40 @@ Several different approaches to achieve viewpoint invariance:
 Graded: Lecture 5 Quiz
 Graded: Programming Assignment 2: Learning Word Representations.
 
-# Week 6
+# Week 6: Optimization: How to make the learning go faster
 
-Optimization: How to make the learning go faster
-We delve into mini-batch gradient descent as well as discuss adaptive learning rates. 
-5 videos, 1 reading
-Reading: Lecture Slides (and resources)
-Video: Overview of mini-batch gradient descent
-Video: A bag of tricks for mini-batch gradient descent
-Video: The momentum method
-Video: Adaptive learning rates for each connection
-Video: Rmsprop: Divide the gradient by a running average of its recent magnitude
-Graded: Lecture 6 Quiz
+## Overview of mini-batch gradient descent
 
-# Week 7
+## A bag of tricks for mini-batch gradient descent
 
-Recurrent neural networks
-This module explores training recurrent neural networks 
-5 videos, 1 reading
-Reading: Lecture Slides (and resources)
-Video: Modeling sequences: A brief overview
-Video: Training RNNs with back propagation
-Video: A toy example of training an RNN
-Video: Why it is difficult to train an RNN
-Video: Long-term Short-term-memory
+## The momentum method
 
-# Week 8
+## Adaptive learning rates for each connection
 
-More recurrent neural networks
-We continue our look at recurrent neural networks 
-3 videos, 1 reading
-Reading: Lecture Slides (and resources)
-Video: Modeling character strings with multiplicative connections
-Video: Learning to predict the next character using HF
-Video: Echo State Networks
+## Rmsprop: Divide the gradient by a running average of its recent magnitude
+
+
+# Week 7: Recurrent neural networks
+
+## Modeling sequences: A brief overview
+
+Linear dynamic systems and hidden Markov models are stochastic models, Recurrent neural networks are deterministic.
+
+## Training RNNs with back propagation
+
+## A toy example of training an RNN
+
+## Why it is difficult to train an RNN
+
+## Long-term Short-term-memory
+
+# Week 8: More recurrent neural networks
+
+## Video: Modeling character strings with multiplicative connections
+
+## Video: Learning to predict the next character using HF
+
+## Video: Echo State Networks
 
 # Week 9
 

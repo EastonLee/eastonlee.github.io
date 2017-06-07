@@ -140,6 +140,33 @@ Whenever including lurking variables cause the change of the direction of an ass
 
 ## Module 6: Sampling
 
+Suppose you want to determine the musical preferences of all students at your university, based on a sample of students. Here are some examples of the many possible ways to pursue this problem.
+
+* volunteer sample
+
+    Post a music-lovers' survey on a university IInternet bulletin board, asking students to vote for their favorite type of music.
+
+    Such a sample is almost guaranteed to be biased, we cannot generalize to any larger group at all.
+
+* convenience sample
+
+    Stand outside the Student Union, across from the Fine Arts Building, and ask students passing by to respond to your question about musical preference.
+
+    There are often subtle reasons why the sample's results are biased.
+
+* sampling frame
+
+    Ask your professors for email rosters of all the students in your classes. Randomly sample some addresses, and email those students with your question about musical preference.
+
+    There may be bias arising because of this discrepancy.
+
+* systematic sampling and simple random sample (SRS)
+
+    Obtain a student directory with email addresses of all the university's students, and send the music poll to every 50th name on the list. (randomly picking students is called SRS, and better).
+
+    Systematic sampling may not be subject to any clear bias, but it would not be as safe as taking a random sample.
+
+    
 ## Module 7: Designing Studies
 
 # UNIT 4: Probability:
