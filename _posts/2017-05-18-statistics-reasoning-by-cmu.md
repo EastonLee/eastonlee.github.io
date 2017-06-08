@@ -160,13 +160,27 @@ Suppose you want to determine the musical preferences of all students at your un
 
     There may be bias arising because of this discrepancy.
 
-* systematic sampling and simple random sample (SRS)
+* systematic sampling
 
-    Obtain a student directory with email addresses of all the university's students, and send the music poll to every 50th name on the list. (randomly picking students is called SRS, and better).
+    Obtain a student directory with email addresses of all the university's students, and send the music poll to every 50th name on the list.
 
     Systematic sampling may not be subject to any clear bias, but it would not be as safe as taking a random sample.
 
-    
+* simple random sample
+
+    Obtain a student directory with email addresses of all the university's students, and send your music poll to a simple random sample of students. As long as all of the students respond, then the sample is **not subject to any bias**, and should succeed in being representative of the population of interest.
+
+Any plan that relies on random selection is called a **probability sampling plan** (or technique). The following three probability sampling plans are among the most commonly used:
+
+* **Simple Random Sampling** is, as the name suggests, the simplest probability sampling plan. It is equivalent to “selecting names out of a hat.” Each individual as the same chance of being selected.
+
+* **Cluster Sampling**—This sampling technique is used when our population is naturally divided into groups (which we call clusters). For example, all the students in a university are divided into majors; all the nurses in a certain city are divided into hospitals; all registered voters are divided into precincts (election districts). In cluster sampling, we take a random sample of clusters, and use all the individuals within the selected clusters as our sample. For example, in order to get a sample of high-school seniors from a certain city, you choose 3 high schools at random from among all the high schools in that city, and use all the high school seniors in the three selected high schools as your sample.
+
+* **Stratified Sampling**—Stratified sampling is used when our population is naturally divided into sub-populations, which we call stratum (plural: strata). For example, all the students in a certain college are divided by gender or by year in college; all the registered voters in a certain city are divided by race. In stratified sampling, we choose a simple random sample from each stratum, and our sample consists of all these simple random samples put together. For example, in order to get a random sample of high-school seniors from a certain city, we choose a random sample of 25 seniors from each of the high schools in that city. Our sample consists of all these samples put together.
+
+Each of those probability sampling plans, if applied correctly, are not subject to any bias, and thus produce samples that represent well the population from which they were drawn.
+
+ 
 ## Module 7: Designing Studies
 
 # UNIT 4: Probability:

@@ -1,13 +1,13 @@
 ---
 title: Neural Networks for Machine Learning University of Toronto
 layout: post
-published: false
+published: true
 category: [Neural Network, Machine Learning, Course Notes]
 ---
 
 This is a note for Course: Neural Networks for Machine Learning University of Toronto
 
-I found Prof. Geoffrey Hinton's British English was a little hard for me to understand, but the content is really of high quality and definitely helped me understand neural network thoroughly.
+I found Prof. Geoffrey Hinton's British English was a little hard for me to understand, but he definitely has the insight of neural network, the content is really of high quality and helped me a lot to understand neural network thoroughly.
 
 * TOC
 {:toc}
@@ -130,6 +130,8 @@ Graded: Programming Assignment 2: Learning Word Representations.
 
 # Week 6: Optimization: How to make the learning go faster
 
+I find nothing worth taking notes of, many overlapping content with the course by Stanford.
+
 ## Overview of mini-batch gradient descent
 
 ## A bag of tricks for mini-batch gradient descent
@@ -151,7 +153,16 @@ Linear dynamic systems and hidden Markov models are stochastic models, Recurrent
 
 ## A toy example of training an RNN
 
+A recurrent network can emulate a finite state automaton, but it is exponentially more powerful. With N hidden neurons it has 2^N possible binary activity vectors (but only N^2 weights).
+
 ## Why it is difficult to train an RNN
+
+Four effective ways to learn an RNN
+
+* Long Short Term Memory
+* Hessian Free Optimization
+* Echo State Network
+* Good initialization with momentum
 
 ## Long-term Short-term-memory
 
