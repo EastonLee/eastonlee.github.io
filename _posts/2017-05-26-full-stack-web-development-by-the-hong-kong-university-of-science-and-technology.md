@@ -130,6 +130,12 @@ I'm tired of Bootstrap's tedious class names, I won't put details here about the
 * Evaluate an expression
 * Initialize a JavaScript variable
 
+## Week 2: Web tools: Grunt and Gulp
+
+Two commonly used automation tools: Grunt and Gulp. The comparison between them:
+* Grunt uses Configuration over Code
+* Gulp uses Code over Configuration
+
 # Course 4: Server-side Development with NodeJS
 
 ## Week 1: Introduction to Server-side Development

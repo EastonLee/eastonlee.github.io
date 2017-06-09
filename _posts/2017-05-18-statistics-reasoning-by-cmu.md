@@ -180,7 +180,17 @@ Any plan that relies on random selection is called a **probability sampling plan
 
 Each of those probability sampling plans, if applied correctly, are not subject to any bias, and thus produce samples that represent well the population from which they were drawn.
 
- 
+```R
+random_sample = population[sample(length(population$Course),192),];random_sample
+random_sample_percent = 100*summary(random_sample$Handed)/length(random_sample$Handed);
+random_sample_percent;
+pop_percent = 100*summary(population$Handed)/length(population $Handed);
+pop_percent; 
+par(mfrow=c(1,2)); pie(pop_percent,labels=paste(c("left=","right="),round(pop_percent,0),"%"),main="Population"); 
+pie(random_sample_percent,labels=paste(c("left=","right="),round(random_sample_percent,0),"%"),main="Random Sample")
+summary(population$Verbal)
+summary(random_sample$Verbal)
+``` 
 ## Module 7: Designing Studies
 
 # UNIT 4: Probability:
