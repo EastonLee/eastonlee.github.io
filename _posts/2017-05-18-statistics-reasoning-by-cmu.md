@@ -211,6 +211,18 @@ This is a **sample survey**, because the individuals self-assess the relationshi
 
 We will begin by using the context of this smoking cessation example to illustrate the specialized vocabulary of experiments. First of all, the explanatory variable, or **factor**, in this case is the method used to quit. The different imposed values of the explanatory variable, or **treatments** (common abbreviation: ttt), consist of the four possible quitting methods. The groups receiving different treatments are called **treatment groups**. The group that tries to quit without drugs or therapy could be called the **control group**—those individuals on whom no specific treatment was imposed. Ideally, the **subjects** (human participants in an experiment) in each treatment group differ from those in the other treatment groups only with respect to the treatment (quitting method). 
 
+```R
+# https://oli.cmu.edu/jcourse/workbook/activity/page?context=fbe0d83b0a0001dc429ce613d9a7112e
+random_sample = computers[sample(length(computers$age), 450),]
+group = sample(1:3,450,replace=T)
+random_sample = cbind(random_sample,group)
+boxplot(random_sample$age~random_sample$group, xlab="Group", ylab="Age (years)")
+two_way_table = table(random_sample$group,random_sample$gender)
+prop.table(two_way_table,1)*100
+```
+
+If neither the subjects nor the researchers know who was assigned what treatment, the experiment is called **double blind**.
+
 # UNIT 4: Probability:
 
 ## Module 8: Introduction (Probability)
