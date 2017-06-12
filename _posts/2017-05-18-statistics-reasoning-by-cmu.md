@@ -223,6 +223,36 @@ prop.table(two_way_table,1)*100
 
 If neither the subjects nor the researchers know who was assigned what treatment, the experiment is called **double blind**.
 
+Summary:
+
+**Observational studies:**
+
+* The explanatory variable's values are allowed to occur naturally.
+
+* Because of the possibility of lurking variables, it is difficult to establish causation.
+
+* If possible, control for suspected lurking variables by studying groups of similar individuals separately.
+
+* Some lurking variables are difficult to control for; others may not be identified.
+
+**Experiments**
+
+* The explanatory variable's values are controlled by researchers (treatment is imposed).
+
+* Randomized assignment to treatments automatically controls for all lurking variables.
+
+* Making subjects blind avoids the placebo effect.
+
+* Making researchers blind avoids conscious or subconscious influences on their subjective assessment of responses.
+
+* A randomized controlled double-blind experiment is generally optimal for establishing causation.
+
+* A lack of realism may prevent researchers from generalizing experimental results to real-life situations.
+
+* Noncompliance may undermine an experiment. A volunteer sample might solve (at least partially) this problem.
+
+* It is impossible, impractical or unethical to impose some treatments.
+
 # UNIT 4: Probability:
 
 ## Module 8: Introduction (Probability)

@@ -136,6 +136,51 @@ Two commonly used automation tools: Grunt and Gulp. The comparison between them:
 * Grunt uses Configuration over Code
 * Gulp uses Code over Configuration
 
+**Dependency Injection** involves four roles:
+* The service
+* The client
+* The interfaces
+* The injector
+
+**Dependency Annotation in Angualar**
+
+* Inline array annotation
+
+    ```javascript
+    module.controller('MenuController', ['$scope', 'menuFactory', function($scope, menuFactory){
+    }]);
+    ```
+
+* $inject property annotation
+
+    ```javascript
+    var MenuController = function($scope, menuFactory) {
+    };
+    MenuController.$inject = ['$scope', 'menuFactory'];
+    module.controller('MenuController',  MenuController);
+    ```
+
+* Implicit annotation
+
+    ```javascript
+    module.controller('MenuController', function($scope, menuFactory) {
+    }]);
+    ```
+**Angular Services**
+
+* Substitudable objects wired together using DI
+* Allow organizing and sharing code across an app
+* Lazily instantiated
+* Singletons
+
+**Five functions that declare services**
+
+* serveice()
+* factory()
+* provider()
+* constant()
+* value()
+
 # Course 4: Server-side Development with NodeJS
 
 ## Week 1: Introduction to Server-side Development
