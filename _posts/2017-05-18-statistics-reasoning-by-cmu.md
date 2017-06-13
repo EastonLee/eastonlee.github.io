@@ -253,6 +253,42 @@ Summary:
 
 * It is impossible, impractical or unethical to impose some treatments.
 
+Examples:
+
+> Question: "What is your favorite kind of music?"
+
+> This is what we call an open question, which allows for almost unlimited responses. It may be difficult to make sense of all the possible categories and subcategories of music that survey respondents could come up with. Some may be more general than what you had in mind ("I like modern music the best") and others too specific ("I like Japanese alternative electronic rock by Cornelius"). Responses are much easier to handle if they come from a closed question:
+
+> Question: Which of these types of music do you prefer: classical, rock, pop, or hip-hop?
+
+> What will happen if a respondent is asked the question as worded above, and he or she actually prefers jazz or folk music or gospel? He or she may pick a second-favorite from the options presented, or try to pencil in the real preference, or may just not respond at all. Whatever the outcome, it is likely that overall, the responses to the question posed in this way will not give us very accurate information about general music preferences. If a closed question is used, then great care should be taken to include all the reasonable options that are possible, including "not sure." Also, in case an option was overlooked, "other:___________" should be included for the sake of thoroughness.
+
+> Many surveys ask respondents to assign a rating to a variable, such as in the following:
+
+> Question: How do you feel about classical music? Circle one of these: I love it, I like it very much, I like it, I don't like it, I hate it.
+
+> Notice that the options provided are rather "top-heavy," with three favorable options vs. two unfavorable. If someone feels somewhat neutral, they may opt for the middle choice, "I like it," and a summary of the survey's results would distort the respondents' true opinions.
+
+> Some survey questions are either deliberately or unintentionally biased towards certain responses:
+
+> Question: "Do you agree that classical music is the best type of music, because it has survived for centuries and is not only enjoyable, but also intellectually rewarding? (Answer yes or no.)"
+
+> This sort of wording puts ideas in people's heads, urging them to report a particular opinion. One way to test for bias in a survey question is to ask yourself, "Just from reading the question, would a respondent have a good idea of what response the surveyor is hoping to elicit?" If the answer is yes, then the question should have been worded more neutrally.
+
+> For the question, "Have you used illegal drugs in the past year?" respondents are told to flip a fair coin (in private) before answering and then answer based on the result of the coin flip: if the coin flip results in "Heads," they should answer "Yes" (regardless of the truth), if a coin flip results in "Tails," they should answer truthfully. Thus, roughly half of the respondents are "truth-tellers," and the other half give the uncomfortable answer "Yes," without the interviewer's knowledge of who is in which group. The respondent who flips "Tails" and answers truthfully knows that he or she cannot be distinguished from someone who got "Heads" in the coin toss. Hopefully, this is enough to encourage respondents to answer truthfully. As we will learn later in the course, the surveyor can then use probability methods to estimate the proportion of respondents who admit they used illegal drugs in this scenario, while being unable to identify exactly which respondents have been drug abusers.
+
+**Summary**
+
+A sample survey is a type of observational study in which respondents assess variables' values (often by giving an opinion).
+
+* Open questions are less restrictive, but responses are more difficult to summarize.
+* Closed questions may be biased by the options provided.
+* Closed questions should permit options such as "other:______" and/or "not sure" if those options may apply.
+* Questions should be worded neutrally.
+* Earlier questions should not deliberately influence responses to later questions.
+* Questions shouldn't be confusing or complicated.
+* Survey method and questions should be carefully designed to elicit honest responses if there are sensitive issues involved.
+
 # UNIT 4: Probability:
 
 ## Module 8: Introduction (Probability)
