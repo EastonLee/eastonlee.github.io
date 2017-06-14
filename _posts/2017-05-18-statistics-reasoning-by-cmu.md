@@ -289,6 +289,14 @@ A sample survey is a type of observational study in which respondents assess var
 * Questions shouldn't be confusing or complicated.
 * Survey method and questions should be carefully designed to elicit honest responses if there are sensitive issues involved.
 
+**Lab Exercise**
+
+```r
+tbl = table(data.frame(data$Treat,data$Outcome)); tbl
+100*tbl/rowSums(tbl)
+plot(factor(data$Treat), data$Time)
+tapply(data$Time, factor(data$Treat), summary)
+```
 # UNIT 4: Probability:
 
 ## Module 8: Introduction (Probability)
