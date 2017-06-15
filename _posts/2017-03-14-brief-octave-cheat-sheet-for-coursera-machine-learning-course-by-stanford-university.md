@@ -6,7 +6,9 @@ category: Machine Learning
 
 I use R with Python a lot, Octave is the chosen language in Coursera course: Machine Learning by Stanford University.
 
-So this article will only cover necessary concept to finish Machine Learning course.
+So this article will only cover necessary concept to finish this Machine Learning course.
+
+<!--more-->
 
 # Index
 

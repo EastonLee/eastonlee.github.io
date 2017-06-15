@@ -7,6 +7,8 @@ category: [statistics, probability]
 
 There are two version of this course in CMU, the other one is "Probability & Statistics", I prefer this version because the "probability" part in this version acts as a "bridge" to the inference section thus making easier to understand and grab the big picture.
 
+<!--more-->
+
 * TOC
 {:toc}
 

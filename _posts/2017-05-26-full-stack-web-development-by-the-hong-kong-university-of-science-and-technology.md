@@ -5,7 +5,9 @@ published: true
 category: [Full Stack, Web, HTML, CSS, JavaScript, BootStrap, Angular, Node.js]
 ---
 
-Finally a non-science course, purely technical one, I can't wait to make my hands dirty on web development. I think every developer whether he/she is front end or back end knows web development more or less, but to make your site/single page application professional and pretty, you have to go through some courses systematically.
+Finally a non-science course, purely a technical one, I can't wait to make my hands dirty on web development. I think every developer whether he/she is front end or back end knows web development more or less, but to make your site/single page application professional and pretty, you have to go through some courses systematically.
+
+<!--more-->
 
 Most concepts are straightforward and simple, so I will only take note of those which are tricky and exceptional.
 

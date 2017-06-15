@@ -4,6 +4,10 @@ layout: post
 category: [Python, tools]
 ---
 
+When you're tweaking Python's package manager PIP, make sure you know these.
+
+<!--more-->
+
 # --no-deps
 
 Only install specified package itself.

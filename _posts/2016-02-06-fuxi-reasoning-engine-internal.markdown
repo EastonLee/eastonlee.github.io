@@ -4,6 +4,9 @@ layout: post
 category: ComBrain
 ---
 
+Fuxi is a symbolic reasoning engine writen in Python.
+<!--more-->
+
 # What is FuXi?
 [FuXi](https://github.com/RDFLib/FuXi/blob/master/docs/Tutorial.rst) is a multi-modal, logical reasoning system for the semantic web. Its primary capability is as a a SPARQL 1.1 RIF Core Entailment implementation. The results in the previous link to the SPARQL 1.1 test result show some of the semantics it supports.
 

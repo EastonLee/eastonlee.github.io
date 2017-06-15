@@ -6,6 +6,8 @@ category: [Big Data, Course Notes]
 
 I've finished a Data Science course on Coursera recently, *Data Manipulation at Scale: Systems and Algorithms*, which is taught by  Bill Howe.
 
+<!--more-->
+
 Some parts of the course aren't new for me, but this is a good course on the whole. Many thanks to Mr Howe for passing his comprehensive knowledge on the large scale data manipulation and analysis.
 
 I've really learned something amazing from it. 

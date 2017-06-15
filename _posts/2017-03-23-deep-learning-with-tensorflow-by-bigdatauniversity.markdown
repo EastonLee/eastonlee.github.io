@@ -10,6 +10,8 @@ This is a note of a Deep Learning course I just got a certificate from: Deep Lea
 
 This course can only give you a simple taste of how to use TensorFlow and part of essential concepts like tensor, variable, placeholder, operation, layer, etc. **It can't teach you the underlying mathematical principles or how to design a reasonably stacked neural network.** Besides this course I still encourage you attend Machine Learning, Neural Network courses to deepen your understanding and enable yourself wisely organize your network architecture.
 
+<!--more-->
+
 * TOC
 {:toc}
 

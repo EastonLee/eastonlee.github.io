@@ -7,6 +7,8 @@ category: [Python]
 
 On Mac, you have many ways to install Python and its packages: pip, conda, brew, port, offical source or binary, etc. But none of them is perfect, sometimes you find you can only install a package through like conda or brew, but after installation, you start your port Python, but can't find that package at all.
 
+<!--more-->
+
 AFAIK it's very hard to install some Python packages via offical .dmg or .pkg files or pip, such as wxPython.
 
 # Bring wxPython home

@@ -6,6 +6,8 @@ category: [Linux, tools]
 
 Easy way to tell which Init System you are using? And how to manipulate services in different Init System.
 
+<!--more-->
+
 # Tell the difference of Init Systems
 
 systemd, SysVinit, Upstart, Supervisor

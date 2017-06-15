@@ -4,7 +4,9 @@ layout: post
 category: [Machine Learning, BitCoin]
 ---
 
-I have an idea recently: predict Bitcoin's future price, and use that predication to assist my trading decision, and make profit from it. To tell if this is profitable and how profitable in academic term is hard for me, but do it is not a big deal for me. Let's just build one Bitcoin Trader bot.
+I have an idea recently: predict Bitcoin's future price, and use that predication to assist my trading decision, and make profit from it. To tell if this is profitable and how profitable in academic terms is hard for me, but do it is not a big deal for me. Let's just build one Bitcoin Trader bot.
+
+<!--more-->
 
 If the trader bot is running, it must have some input to output some trading decision. First, it must know the historical price of Bitcoin and current price. Second, though some researchers hold the [efficient-market hypothesis](https://en.wikipedia.org/wiki/Efficient-market_hypothesis), but I don't think this hypothesis can apply on Bitcoin, so the sentiment of the crowd should not be ignored, so take account crowd's sentiment and sense it wisely.
 

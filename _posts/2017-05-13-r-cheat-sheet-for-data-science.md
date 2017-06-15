@@ -5,10 +5,13 @@ published: true
 category: [misc]
 ---
 
-* TOC
-{:toc}
 
 This is not an exhaustive reference for R language, I just wrote this according to my recalling of DataCamp courses and Data Science Specialization by Johns Hopkins University on Coursera, but this may be suitable for most data analysts and data scientists.
+
+<!--more-->
+
+* TOC
+{:toc}
 
 # Data types - R Objects
 

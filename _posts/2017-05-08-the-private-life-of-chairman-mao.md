@@ -5,7 +5,9 @@ published: true
 category: [Mao Zedong, China, CPC, Dictator]
 ---
 
-Recently I read a memoir written by Li Zhisui, one of the physicians to Mao Zedong. Li Zhisui worked for Mao from 1954 to 1976 when Mao died of ALS, totally for 22 years. He had a close view on Mao's private life and told us many details about Mao's political motives to start the Great Leap Forward and The Cultural Revolution, the two great disasters Mao brought to China.
+Recently I read a memoir written by Li Zhisui, one of the physicians to Mao Zedong. Li Zhisui worked for Mao from 1954 to 1976 (when Mao died of ALS), totally for 22 years. He had a close view on Mao's private life and told us many details about Mao's political motives to start the Great Leap Forward and The Cultural Revolution, the two great disasters Mao brought to China.
+
+<!--more-->
 
 From these details, we can see that Mao isn't a great man with great wisdom, he has no basic scientific knowledge, he made national strategy just out of air or his understanding of Chinese history especially the political struggle part.
 

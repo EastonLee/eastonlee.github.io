@@ -4,10 +4,13 @@ layout: post
 category: eating
 ---
 
-Before I moved, all meal-replacement I could buy are too expensive, so I made my own at home, and here was [my recipe](https://diy.soylent.com/recipes/easton) if you can read Chinese:
-![](http://7u2owr.com1.z0.glb.clouddn.com/diy_soylent_easton.png?imageView2/2/w/1000 "easton's recipe")
+Before I moved to California, all meal-replacements I could buy are too expensive, so I made my own at home, and here was [my recipe](https://diy.soylent.com/recipes/easton) if you can read Chinese.
 
-Now I have more options: Soylent, Joylent, 100%FOOD, etc. And most times, they are cheaper than Chinese similar products. Soylent and 100%FOOD are based in USA and Joylent England.
+Now I have more options: Soylent, Joylent, 100%FOOD, etc. And most times, they are cheaper than Chinese similar products. Soylent and 100%FOOD are based in USA and Joylent is in England.
+
+<!--more-->
+
+![](http://7u2owr.com1.z0.glb.clouddn.com/diy_soylent_easton.png?imageView2/2/w/1000 "easton's recipe")
 
 I bought Joylent when I found Soylent was designing their powder 1.7 and the 1.6 was backordered, and found Joylent is pretty good. Joylent powder is ground very fine and easy to mix well with water in the shaker bottle ( the first shaker bottle is free ). My favorite flavor is chocolate, it tastes good and has no gas problem ( gut gas ), but when I tried the banana flavor, the gas is really weird. As for the price, €6/day for 5 bags or €5.50/day for 10 bags, cheaper than Soylent and 100%FOOD. Besides the international shipment fee is acceptable for €5, but the DHL is too slow, I waited for 9 days.
 

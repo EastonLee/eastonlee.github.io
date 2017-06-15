@@ -7,6 +7,8 @@ category: [Machine Learning, Equations, Recurrent Neural Network, RNN, LSTM, GRU
 
 This is a cheat sheet for Recurrent Neural Network learner, covers from math essentials of neural network to several different kinds of RNN. If you go through the whole content and understand thoroughly, you will at least be able to make your own neural network architecture, derive forward/backward propagation equations, which are fundamental to building your own working neural network.
 
+<!--more-->
+
 * TOC
 {:toc}
 

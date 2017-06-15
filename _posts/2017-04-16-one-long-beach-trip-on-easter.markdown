@@ -7,6 +7,7 @@ category: []
 
 One day I haven't spent totally before computer, and I get red-necked now.
 
+<!--more-->
 
 [![alt text][2]][2]
 

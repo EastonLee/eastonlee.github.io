@@ -4,7 +4,9 @@ layout: post
 category: eating
 ---
 
-I am so lazy, but to keep myself breathing, I have to spend 0.5-1 hours to have my meals. What a shame and a waste of time for lazy people like me, I can name 1,000 more important things than regular food, such as stumbling on Youtube :). Maybe we can DIY our meals which will take us less than 2 mins and simultaneously meet our nutritional requirements, it also sounds good if there have already existed such products.
+I am so lazy, I hate spending time on eating, but I have to spend 0.5-1 hours to have meals every day. What a shame and a waste of time for lazy people like me, I can name 1,000 more important things than having regular food. Maybe we can DIY our meals which will take us less than 2 minutes and meanwhile meet our nutritional requirements, it also sounds good if there already exist such products.
+
+<!--more-->
 
 # Options
 You may have heard [Soylent](https://www.soylent.com/), which seems a excellent option. According to [Wikipedia](https://en.wikipedia.org/wiki/Soylent_\(drink\))

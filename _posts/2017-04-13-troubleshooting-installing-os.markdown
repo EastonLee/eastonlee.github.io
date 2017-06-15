@@ -9,6 +9,8 @@ Some tools and configuration examples can be found in this [GitHub repository](h
 
 Installing OS is a bad job, rescuing one is worse, recovering data is the worst. But most time when it comes, we have to face it.
 
+<!--more-->
+
 When you update your OS or install another one, you are taking risks of failing next startup, messing up partitions or even losing valuable data.
 
 Here I record my regular process of installing OSes.

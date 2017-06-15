@@ -3,9 +3,11 @@ title: Machine Learning by Stanford University
 layout: post
 category: [Machine Learning, Course Notes]
 ---
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 This course is one of the most famous courses on Coursera. Now I go two weeks ahead of the deadline and reach Week 5, I plan to finish it in the flowing few days. 
+
+<!--more-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 Update 03-19:
 I finished the course with full marks today, but this post is still incomplete, I will keep updating it as reviewing this great course.

@@ -4,7 +4,9 @@ layout: post
 category: tools
 ---
 
-Sublime Text rocks, but can you run Python projects interactively when using Build System?
+Sublime Text rocks, but can you run Python projects interactively while using its Build System?
+
+<!--more-->
 
 Sublime Text is super editor, it's fast, pretty and extensible, so I use it a lot to edit any possible text files, and develop Python projects. Vim, Emacs and PyCharm are also cool, but Vim is "evil", Emacs is too "guru", Pycharm is so slow, I decide to bury them and move to Sublime Text. 
 

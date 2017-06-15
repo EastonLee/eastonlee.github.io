@@ -9,6 +9,8 @@ This is a note for Course: Neural Networks for Machine Learning University of To
 
 I found Prof. Geoffrey Hinton's British English was a little hard for me to understand, but he definitely has the insight of neural network, the content is really of high quality and helped me a lot to understand neural network thoroughly.
 
+<!--more-->
+
 * TOC
 {:toc}
 

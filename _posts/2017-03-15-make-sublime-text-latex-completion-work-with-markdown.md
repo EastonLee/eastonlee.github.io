@@ -4,7 +4,9 @@ layout: post
 category: tools
 ---
 
-When I use Sublime Text to edit Markdown files, I appreciate the Syntax Highlight provided by *Markdown Light* plugin, but just like built-in and other Markdown plugins, they can't provide auto completion for embedded LaTex statements in Markdown files. But it's very common nowadays to mix various branches of Markdown with LaTex-like math equations, it will ease my pain if I can expect LaTex auto completion when editing Markdown files.
+When I use Sublime Text to edit Markdown files, I appreciate the Syntax Highlight provided by *Markdown Light* plugin, but just like built-in and other Markdown plugins, they can't provide auto completion for embedded LaTex statements in Markdown files. But it's very common nowadays to mix various branches of Markdown with LaTex-like math equations, it will ease my pain if I can have LaTex auto completion when editing Markdown files.
+
+<!--more-->
 
 Here is the simple solution:
 

@@ -7,6 +7,8 @@ category: [TensorFlow, Machine Learning, tools]
 
 Today I was trying [a RNN model](https://github.com/fchollet/keras/blob/master/examples/addition_rnn.py) using Keras and TensorFlow, and some warnings just came out:
 
+<!--more-->
+
 ```
 W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
 W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
@@ -28,3 +30,9 @@ To install it:
     pip install tensorflow-1.0.1-cp27-cp27m-macosx_10_12_intel.whl
 
 You may need root access.
+
+Update 04/06/2017: This compiled Tensorflow is really faster than pip installed version
+
+| https://github.com/tflearn/tflearn/blob/master/examples/nlp/ | compiled avg | pip installed |
+|--------------------------------------------------------------|--------------|---------------|
+| lstm.py                                                      | 105 s        | 140 s         |

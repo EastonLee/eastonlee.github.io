@@ -6,6 +6,8 @@ category: Python
 
 Python enable us to perform advanced operation in very expressive way, meanwhile covers many users' eyes from underlying implement details. If the performance of your application plays a critical role, please always keep in mind the time complexity of these common operations.
 
+<!--more-->
+
 The following table is an important cheat sheet to memorize to keep your applications behave.
 [Python official page](https://wiki.python.org/moin/TimeComplexity)
 
