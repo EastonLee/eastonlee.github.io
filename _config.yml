@@ -16,6 +16,7 @@
 title: EastonLee
 email: me@eastonlee.com
 #description: > # this means to ignore newlines until "baseurl:"
+description: "This is Easton Lee's personal site where he places his thoughts into words and records his achievements."
 baseurl:  # the subpath of your site, e.g. /blog
 url: https://eastonlee.com # the base hostname & protocol for your site, e.g. http://example.com
 enforce_ssl: eastonlee.com
