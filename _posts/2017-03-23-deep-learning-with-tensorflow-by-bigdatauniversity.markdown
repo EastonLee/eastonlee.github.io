@@ -4,7 +4,6 @@ layout: post
 published: true
 category: [Deep Learning, Machine Learning, Course Notes]
 ---
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 This is a note of a Deep Learning course I just got a certificate from: Deep Learning with TensorFlow by BigDataUniversity.
 
@@ -2500,3 +2499,5 @@ nNet.train()
 98% marks.
 
 https://courses.bigdatauniversity.com/certificates/43e77da987884309a79793d548602144
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
