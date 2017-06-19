@@ -7,9 +7,9 @@ category: [Graphic Design]
 
 I was afraid of designing, I didn't know what to think when asked to design, my design vocabulary was too small. After this course I think I'm still naive in designing, but at least I'd be a less scared designer and really I've grabbed some small tricks.
 
-This is still an incomplete lecture note, only records what I feel quite new.
-
 <!--more-->
+
+This is still an incomplete lecture note, only records what I feel quite new.
 
 # Week 1: Getting Started
 
