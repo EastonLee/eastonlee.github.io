@@ -340,7 +340,7 @@ If $$p(x_i) < \epsilon$$, we say $$x_i$$ is anomalous. We use Gaussian Distribut
 
 ### Gaussian Distribution
 
-$$p(x;\mu, \sigma)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$p(x;\mu, \sigma)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
 ### Algorithm
 

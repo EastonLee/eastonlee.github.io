@@ -32,7 +32,7 @@
     display: none;
   }
 
-  .page-link {
+  .minima-page-link {
     color: $text-color;
     line-height: $base-line-height;
 
@@ -75,7 +75,7 @@
       padding-bottom: 5px;
     }
 
-    .page-link {
+    .minima-page-link {
       display: block;
       padding: 5px 10px;
 
@@ -207,7 +207,7 @@
     font-size: 36px;
   }
 }
-/*
+/* easton doesn't like this
 .post-content {
   margin-bottom: $spacing-unit;
 

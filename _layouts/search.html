@@ -1,10 +1,9 @@
 ---
 layout: default
 ---
-<form action="/search.html" method="get">
-  <label for="search-box">Search</label>
-  <input type="text" id="search-box" name="query">
-  <input type="submit" value="search">
+<form action="/search.html" method="get" class="form-inline">
+  <input class="form-control mr-sm-2" type="text" name="query" id="search-box">
+  <button type="submit" class="btn">Search</button>
 </form>
 
 <ul id="search-results"></ul>

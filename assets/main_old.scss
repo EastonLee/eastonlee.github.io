@@ -1,0 +1,99 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+// Minima also includes a mixin for defining media queries.
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+
+// easton
+.post-tag {
+    display: inline-block;
+    background: rgba(106, 159, 181, 0.15);
+    padding: 0.5rem;
+    margin-right:.5rem;
+    border-radius: 4px;
+    color: #6a9fb5;
+    font-family: "PT Sans", Helvetica, Arial, sans - serif;
+    font-size: 90%;
+    -webkit-transition: all 0.1 s ease - in -out;
+    -moz-transition: all 0.1 s ease - in -out;
+    transition: all 0.1 s ease - in -out
+}
+
+.post-tag:hover {
+    text-decoration: none;
+    background: #6a9fb5;
+    color: #fff
+}
+
+.post-date {
+    display: inline-block;
+    font-size: 80%;
+    color: #9a9a9a;
+    margin: 0;
+    padding: 0
+}
+
+h1
+{
+    border-bottom:1px solid #CCC;
+    width:100%;
+    //float:left;
+    padding-bottom:3px;
+}
+
+// to_top.css
+#toTop {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    /* For IE8 and earlier */
+}
+
+#toTop:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    /* For IE8 and earlier */
+}
+
+// Import partials from the `minima` theme.
+// @import  "bootstrap3.3.7/bootstrap", "minima", "poole/_base";
+// @import  "bootstrap-4.0.0-alpha.4/bootstrap", "minima", "poole/_base";
+@import  "bootstrap-4.0.0-alpha.6/bootstrap", "minima";

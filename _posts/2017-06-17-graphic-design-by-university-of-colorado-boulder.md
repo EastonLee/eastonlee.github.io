@@ -19,7 +19,7 @@ This is still an incomplete lecture note, only records what I feel quite new.
 * Saturation: how vivid is the color?
 * Lightness: how light or dark is the color?
 
-![Hue, Saturation, Lightness](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/dVARonVKEeam4BLcQYZr8Q_985e25c32b21b5613712c83fd90c1ac2_COLOR.jpg?expiry=1497916800000&hmac=5gREVUhgKmkP8bLyG_B_UggXMHh-qins1_qELxi7I_E){:width="500px"}
+![Hue, Saturation, Lightness](https://eastonlee.b0.upaiyun.com/blog/2017-06-17-graphic-design-by-university-of-colorado-boulder/Hue,%20Saturation,%20Lightness.jpg){:width="500px"}
 
 **Unexpected places yield unexpected results.**
 
@@ -75,7 +75,7 @@ Not all detailed explanation is included here, so go back to course materials.
 
     Look how good designs work and bad designs don't work
 
-2. A good project should alway starts with a grid
+2. A good project should always starts with a grid
 
 3. Negative space is just as important as content
 
