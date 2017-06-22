@@ -208,6 +208,26 @@ When you import **core modules or external modules**, do like this `require("mod
     * Every request must include sufficient information so server side can serve up requested information
     * Client side MVC setup
 
+**Node.js callbacks**
+
+A brief introduction of callback from [nodejitsu](https://docs.nodejitsu.com/articles/getting-started/control-flow/what-are-callbacks/):
+
+> This works just fine and is very typical in other development environments. However, if fetchData takes a long time to load the data (maybe it is streaming it off the drive or the internet), then this causes the whole program to 'block' - otherwise known as sitting still and waiting - until it loads the data. Node.js, being an asynchronous platform, doesn't wait around for things like file I/O to finish - Node.js uses callbacks. A callback is a function called at the completion of a given task; this prevents any blocking, and allows other code to be run in the meantime.
+> ```javascript
+> function asyncOperation ( a, b, c, callback ) {
+>   // ... lots of hard work ...
+>   if ( /* an error occurs */ ) {
+>     return callback(new Error("An error has occured"));
+>   }
+>   // ... more work ...
+>   callback(null, d, e, f);
+> }
+> 
+> asyncOperation ( params.., function ( err, returnValues.. ) {
+>    //This code gets run after the async operation gets run
+> });
+> ```
+
 ## Week 2: Data, Data, Where art Thou Data?
 
 **Four broad categories of NoSQL Databases**
