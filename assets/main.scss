@@ -127,12 +127,49 @@ body > .site-header + .container {
     padding: 0
 }
 
-h1
+.post-content h1
 {
     border-bottom:1px solid #CCC;
     width:100%;
     //float:left;
     padding-bottom:3px;
+}
+
+// easton: this hover anchors margin-left only applies on "Helvetica Neue" font
+.post-content h1:hover:before {
+  content: "# ";
+  opacity: 0.2;
+  margin-left: -0.556em-0.28em;
+}
+
+.post-content h2:hover:before {
+  content: "## ";
+  opacity: 0.2;
+  margin-left: -0.556em*2-0.28em;
+}
+
+.post-content h3:hover:before {
+  content: "### ";
+  opacity: 0.2;
+  margin-left: -0.556em*3-0.28em;
+}
+
+.post-content h4:hover:before {
+  content: "#### ";
+  opacity: 0.2;
+  margin-left: -0.556em*4-0.28em;
+}
+
+.post-content h5:hover:before {
+  content: "##### ";
+  opacity: 0.2;
+  margin-left: -0.556em*5-0.28em;
+}
+
+.post-content h6:hover:before {
+  content: "###### ";
+  opacity: 0.2;
+  margin-left: -0.556em*6-0.28em;
 }
 
 table {
