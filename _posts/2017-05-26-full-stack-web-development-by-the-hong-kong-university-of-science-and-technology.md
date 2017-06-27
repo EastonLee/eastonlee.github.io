@@ -237,6 +237,23 @@ A brief introduction of callback from [nodejitsu](https://docs.nodejitsu.com/art
 * Column family databases (e.g., Cassadra)
 * Graph databases (e.g., Neo4J)
 
+**MongoDB**
+
+With MongoDB, you can manipulate data with less explicit code.
+
+Run `mongo` in terminal to enter MongoDB REPL.
+
+```javascript
+db
+use conFusion
+db
+db.help()
+db.dishes.insert({ name: "Uthapizza", description: "Test" });
+db.dishes.find().pretty();
+var id = new ObjectId();
+id.getTimestamp();
+```
+
 ## Week 3: Halt! Who goes there?
 
 ## Week 4: Backend as a Service (BaaS)
