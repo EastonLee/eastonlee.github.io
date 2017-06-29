@@ -95,7 +95,7 @@ $$corr(x, y)=\frac{cov(x, y)}{σ_xσ_y}$$
 * Always lies in range -1 to 1
 * Only reflects linear dependence between variables
 
-![]({{ site.url }}/assets/2017-04-08/Screen Shot 2017-04-25 at 4.33.35 PM.png)
+![](/assets/2017-04-08/Screen Shot 2017-04-25 at 4.33.35 PM.png)
 
 ## Complement rule
 
@@ -225,11 +225,11 @@ TODO: more
 
 <!--[An Empirical Exploration of Recurrent Network Architectures: ](http://proceedings.mlr.press/v37/jozefowicz15.pdf)-->
 
-![]({{ site.url }}/assets/2017-04-08/Screen Shot 2017-04-25 at 11.12.23 PM.png)
+![](/assets/2017-04-08/Screen Shot 2017-04-25 at 11.12.23 PM.png)
 
 ### Details of LSTM cell
 
-![]({{ site.url }}/assets/2017-04-08/Screen Shot 2017-04-25 at 8.44.08 PM.png)
+![](/assets/2017-04-08/Screen Shot 2017-04-25 at 8.44.08 PM.png)
 
 ### Intuition
 
@@ -276,11 +276,11 @@ Ans: peephole LSTM, coupled forget and input gates, Gated Recurrent Unit (GRU po
 
 ### Overview of GRU cell
 
-![]({{ site.url }}/assets/2017-04-08/Screen Shot 2017-04-25 at 11.05.48 PM.png)
+![](/assets/2017-04-08/Screen Shot 2017-04-25 at 11.05.48 PM.png)
 
 ### Details of GRU cell
 
-![]({{ site.url }}/assets/2017-04-08/Screen Shot 2017-04-26 at 12.08.51 PM.png)
+![](/assets/2017-04-08/Screen Shot 2017-04-26 at 12.08.51 PM.png)
 
 ### Intuition
 
