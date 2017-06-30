@@ -5,7 +5,7 @@ published: true
 category: [GRUB, tools, OS]
 ---
 
-Some tools and configuration examples can be found in this [GitHub repository](https://github.com/easton042/Troubleshooting-Installing-OS).
+Some tools and configuration examples can be found in this [GitHub repository](https://github.com/eastonlee/Troubleshooting-Installing-OS).
 
 Installing OS is a bad job, rescuing one is worse, recovering data is the worst. But most time when it comes, we have to face it.
 
