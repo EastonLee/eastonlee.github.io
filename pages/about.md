@@ -18,5 +18,20 @@ I really enjoy talking with people who share an interest in machine learning and
 
 Know more about me:
 
-* [GitHub](https://github.com/easton042)
-* [LinkedIn](https://linkedin.com/in/eastonlee)
+* [GitHub](https://github.com/EastonLee)
+* [LinkedIn](https://linkedin.com/in/EastonLee)
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Easton Lee",
+  "url": "http://EastonLee.com",
+  "sameAs": [
+    "https://github.com/EastonLee",
+    "https://twitter.com/EastonLee",
+    "https://linkedin.com/in/EastonLee",
+    "https://plus.google.com/107628046279641393605"
+  ]
+}
+</script>

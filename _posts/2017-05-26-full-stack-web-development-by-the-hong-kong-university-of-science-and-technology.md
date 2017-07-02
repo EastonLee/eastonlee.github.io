@@ -228,7 +228,7 @@ A brief introduction of callback from [nodejitsu](https://docs.nodejitsu.com/art
 > });
 > ```
 
-## Week 2: Data, Data, Where art Thou Data?
+## Week 2: MongoDB and Mongoose
 
 **Four broad categories of NoSQL Databases**
 
@@ -254,6 +254,51 @@ var id = new ObjectId();
 id.getTimestamp();
 ```
 
-## Week 3: Halt! Who goes there?
+**Mongoose**
+
+Mongoose enables to use schema in MongoDB
+
+```javascript
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+require('mongoose-currency').loadType(mongoose);
+var Currency = mongoose.Types.Currency;
+
+// create a schema
+var promotionSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    image: {
+        type: String,
+        required: true
+    },
+    label: {
+        type: String,
+        required: true,
+        default: ""
+    },
+    price: {
+        type: Currency
+    }
+}, {
+    timestamps: true
+});
+
+// the schema is useless so far
+// we need to create a model using it
+var Promotions = mongoose.model('Promotion', promotionSchema);
+
+// make this available to our Node applications
+module.exports = Promotions;
+```
+
+## Week 3: User Authentication
 
 ## Week 4: Backend as a Service (BaaS)
