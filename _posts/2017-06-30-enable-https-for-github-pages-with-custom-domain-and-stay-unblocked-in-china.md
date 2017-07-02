@@ -9,6 +9,8 @@ GitHub Pages is a great place to host static content for personal use, especiall
 
 <!--more-->
 
+**Update on July 2:** I find a Chinses CDN provider called [CacheMoment](https://www.cachemoment.com/), it provides CDN with HTTPS, but for unregistered(未备案) user the CDN severs are based in Hong Kong and the accessibility is much worse than direct GitHub Pages.
+
 # CDNs
 
 It's very easy to think of CDN services which distribute your content throughout the globe and meanwhile support HTTPS, such as Cloundflare and Cloudfront, etc. But Cloudflare and Cloudfront are both blocked in China, at least hardly visitable.
