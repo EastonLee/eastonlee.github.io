@@ -30,7 +30,7 @@ Know more about me:
   "logo": "https://avatars1.githubusercontent.com/u/10185801",
   "sameAs": [
     "https://github.com/EastonLee",
-    "https://twitter.com/EastonLee",
+    "https://twitter.com/ImEastonLee",
     "https://linkedin.com/in/EastonLee",
     "https://plus.google.com/107628046279641393605"
   ]
