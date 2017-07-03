@@ -301,4 +301,26 @@ module.exports = Promotions;
 
 ## Week 3: User Authentication
 
+**Cookie + Session Authentication**
+
+* Cookie set on the client side by the server
+* Cookie is used as a storage for session ID that is used as an index into server-side storage of session information.
+
+**Why Token-Based Authentication**
+
+* Session authentication becomes a problem when we need stateless servers and scalability
+* Mobile application platforms have a hard time handling cookies/sessions
+* Sharing authentication with other applications not feasible
+* Cross-origin resource sharing (CORS) problem
+* Cross-site request forgery (CSRF)
+
+**Token-based Authentication**
+
+1. User requests access with their username and password
+2. Server validates credentials
+3. Server creates a signed token and sends it to the client
+– Nothing stored on the server
+4. All subsequent requests from the client should include the token
+5. Server verifies the token and responds with data if validated
+
 ## Week 4: Backend as a Service (BaaS)
