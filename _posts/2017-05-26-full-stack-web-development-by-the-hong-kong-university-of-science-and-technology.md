@@ -324,3 +324,40 @@ module.exports = Promotions;
 5. Server verifies the token and responds with data if validated
 
 ## Week 4: Backend as a Service (BaaS)
+
+**MongoDB and Relations**
+* NoSQL databases like MongoDB do not explicitly support relations like the SQL databases
+* All documents are normally expected to be self- contained
+* However you can store references to other documents within a document by using ObjectIds
+* Mongoose does not have joins
+
+**Mongoose Population works like Joining of Relational Database**
+
+```javascript
+//Modified Comment Schema
+var commentSchema = new Schema({
+        rating: { 
+            type: Number, 
+            min: 1, 
+            max: 5, 
+            required: true 
+        },
+        comment:  { 
+            type: String, 
+            required: true 
+        },
+        postedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User’
+        }
+    }, 
+    {timestamps: true});
+
+// Populating the Documents
+Dishes.find({})        
+.populate('comments.postedBy')        
+.exec(function (err, dish) {
+    if (err) throw err;
+    res.json(dish);
+});
+```
