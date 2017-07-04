@@ -361,3 +361,23 @@ Dishes.find({})
     res.json(dish);
 });
 ```
+
+**SSL/TLS Handshake**
+
+![SSL/TLS Handshake by Prof. Jogesh	K.	Muppala](https://eastonlee.b0.upaiyun.com/blog/2017-05-26-full-stack-web-development-by-the-hong-kong-university-of-science-and-technology/SSL:TLS%20handshake.png)
+
+**OAuth 2 Roles**
+
+* Resource owner: You, the user that authorizes a client application to access their account
+* Client Application: Application (website or app) that wants access to the resource server to obtain information about you
+* Resource Server: Server hosting protected data (e.g., your personal information)
+* Authorization Server: Server that issues an access token to the client application to request resource from the resource server
+
+**OAuth 2 Tokens**
+* Access token: allows access to user data by the client application
+    * Has limited lifetime
+    * Need to be kept confidential
+    * Scope: parameter used to limit the rights of the access token
+* Refresh token: Used to refresh an expired access token
+
+![authorization code grand approach by Prof. Jogesh	K.	Muppala](https://eastonlee.b0.upaiyun.com/blog/2017-05-26-full-stack-web-development-by-the-hong-kong-university-of-science-and-technology/authorization%20code%20grand%20approach.png)

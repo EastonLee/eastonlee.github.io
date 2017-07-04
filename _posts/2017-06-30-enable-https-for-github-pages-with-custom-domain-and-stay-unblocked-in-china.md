@@ -13,17 +13,17 @@ GitHub Pages is a great place to host static content for personal use, especiall
 
 # CDNs
 
-It's very easy to think of CDN services which distribute your content throughout the globe and meanwhile support HTTPS, such as Cloundflare and Cloudfront, etc. But Cloudflare and Cloudfront are both blocked in China, at least hardly visitable.
+It's very easy to think of CDN services which distribute your content throughout the globe and meanwhile support HTTPS, such as [Cloudflare](http://cloudflare.com/) and [Cloudfront](https://aws.amazon.com/cloudfront/), etc. But Cloudflare and Cloudfront are both blocked in China, at least hardly visitable.
 
-Now I realize it's a headache to ensure my GitHub-hosting site has HTTPS and accessible in China at the same time. Of course you can build your own web server like on EC2 nodes in Japan which are accessible in China and enable its HTTPS, that's a complex but sensible way, but that method will not be covered in this article. In fact I recommend you to host the dynamic part of your site in EC2.
+Now I realize it's a headache to ensure my [GitHub-hosting](https://pages.github.com/) site has HTTPS and accessible in China at the same time. Of course you can build your own web server like on [EC2](https://aws.amazon.com/ec2/) nodes in Japan which are accessible in China and enable its HTTPS, that's a complex but sensible way, but that method will not be covered in this article. In fact I recommend you to host the dynamic part of your site in EC2.
 
 # Geo DNSes
 
-Then I think it would be perfect if only my site is resolved by DNS directly to GitHub server in China, and resolved to CDN server when out of China. Is this technically possible? Definitely YES, and AWS Route 53 comes to help. I set the GitHub Pages server's A record 192.30.252.153 for the China Geolocation, and my Cloudfront's Alias record for the default Geolocation, that's it. Now when Chinese users open http://eastonlee.com, they will be served by GitHub server through HTTP, when other users open http://eastonlee.com, they will be redirected to https://eastonlee.com and served by Cloudfront server through HTTPS.
+Then I think it would be perfect if only my site is resolved by DNS directly to GitHub server in China, and resolved to CDN server when out of China. Is this technically possible? Definitely YES, and AWS [Route 53](https://aws.amazon.com/route53/) comes to help. I set the GitHub Pages server's A record 192.30.252.153 for the China Geolocation, and my Cloudfront's Alias record for the default Geolocation, that's it. Now when Chinese users open http://eastonlee.com, they will be served by GitHub server through HTTP, when other users open http://eastonlee.com, they will be redirected to https://eastonlee.com and served by Cloudfront server through HTTPS.
 
 # Why your site should be global including China?
 
-China is a large market and will bring large traffic to your site, but the premise is that your site is accessible to Chinese people. For indie webmasters or bloggers outside of China, that's a big challenge, because most web hosting or similar services are blocked in China, such as WordPress, Blogger, Ghost, Google App Engine, Heroku, Cloudflare and so on. If your site is hosted on a service that is accessible globally including China, you should be thankful and stick to it. If you want to test accessibility of your site in China, try [this](https://www.comparitech.com/privacy-security-tools/blockedinchina/) or [this](ce.cloud.360.cn)
+China is a large market and will bring large traffic to your site, but the premise is that your site is accessible to Chinese people. For indie webmasters or bloggers outside of China, that's a big challenge, because most web hosting or similar services are blocked in China, such as [WordPress](https://wordpress.com/), [Blogger]()https://www.blogger.com/, [Ghost](https://ghost.org/), [Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/), Cloudflare and so on. If your site is hosted on a service that is accessible globally including China, you should be thankful and stick to it. If you want to test accessibility of your site in China, try [this](https://www.comparitech.com/privacy-security-tools/blockedinchina/) or [this](ce.cloud.360.cn)
 
 # Result
 
