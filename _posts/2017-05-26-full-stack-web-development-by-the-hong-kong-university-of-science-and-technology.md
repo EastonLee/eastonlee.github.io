@@ -134,6 +134,10 @@ I'm tired of Bootstrap's tedious class names, I won't put details here about the
 
 ## Week 2: Web tools: Grunt and Gulp
 
+Grunt and Gulp automate many things using tasks. Grunt is based on files while Gulp is a streaming build system.
+
+## Week 3: Single Page Applications
+
 Two commonly used automation tools: Grunt and Gulp. The comparison between them:
 * Grunt uses Configuration over Code
 * Gulp uses Code over Configuration
@@ -182,6 +186,10 @@ Two commonly used automation tools: Grunt and Gulp. The comparison between them:
 * provider()
 * constant()
 * value()
+
+
+
+## Week 4: Client-Server Communication and Angular Testing
 
 # Course 4: Server-side Development with NodeJS
 
@@ -348,7 +356,7 @@ var commentSchema = new Schema({
         },
         postedBy: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User’
+            ref: 'User'
         }
     }, 
     {timestamps: true});
