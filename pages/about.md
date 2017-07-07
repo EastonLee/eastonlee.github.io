@@ -27,7 +27,7 @@ Know more about me:
   "@type": "Person",
   "name": "Easton Lee",
   "url": "http://EastonLee.com",
-  "logo": "https://avatars1.githubusercontent.com/u/10185801",
+  "logo": "https://eastonlee.b0.upaiyun.com/avatar.JPG",
   "sameAs": [
     "https://github.com/EastonLee",
     "https://twitter.com/ImEastonLee",
