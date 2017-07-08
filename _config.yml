@@ -23,6 +23,15 @@ enforce_ssl: eastonlee.com
 twitter_username: ImEastonLee
 github_username:  EastonLee
 linkedin_username:  EastonLee
+# for Google SEO, but jekyll-seo-tag seems not taking these two fields, pathetic
+publisher:
+  name: EastonLee
+  logo: 
+    url: https://eastonlee.b0.upaiyun.com/avatar.jpg
+    height: 1360
+    width: 1360
+# setting image fixed for SEO is not sensible
+image: https://eastonlee.b0.upaiyun.com/avatar.jpg
 
 # Build settings
 markdown: kramdown
