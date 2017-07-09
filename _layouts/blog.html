@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h1 class="page-heading">Blog Posts</h1>
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+        {{ post.excerpt }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Easton Lee",
+  "url": "http://EastonLee.com",
+  "image": "https://eastonlee.b0.upaiyun.com/avatar.jpg",
+  "sameAs": [
+    "https://github.com/EastonLee",
+    "https://twitter.com/ImEastonLee",
+    "https://linkedin.com/in/EastonLee",
+    "https://plus.google.com/107628046279641393605"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "EastonLee",
+    "headline": "EastonLee",
+    "author": {
+        "@type": "Person",
+        "name": "Easton Lee"
+    },
+    "image": {
+        "@type": "imageObject",
+        "height": 1000,
+        "width": 1000,
+        "url": "https://eastonlee.b0.upaiyun.com/organization_logo.png"
+    },
+    "description": "This is Easton Lee’s personal site where he places his thoughts into words and records his achievements.",
+    "publisher": {
+        "@type": "Organization",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://eastonlee.b0.upaiyun.com/avatar.jpg"
+        },
+        "name": "Easton Lee"
+    },
+    "url": "http://eastonlee.com/",
+    "potentialAction": {
+	    "@type": "SearchAction",
+	    "target": "http://eastonlee.com/search?query={search_term_string}",
+	    "query-input": "required name=search_term_string"
+  	}
+}
+</script>
