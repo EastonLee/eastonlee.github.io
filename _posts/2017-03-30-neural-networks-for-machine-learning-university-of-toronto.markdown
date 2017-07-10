@@ -2,6 +2,7 @@
 title: Neural Networks for Machine Learning University of Toronto
 layout: post
 published: true
+last_modified_at: 2017-07-09
 category: [Neural Network, Machine Learning, Course Notes]
 ---
 
@@ -178,19 +179,31 @@ Four effective ways to learn an RNN
 
 # Week 9
 
-Ways to make neural networks generalize better
-We discuss strategies to make neural networks generalize better 
-6 videos, 1 reading
-Reading: Lecture Slides (and resources)
-Video: Overview of ways to improve generalization
-Video: Limiting the size of the weights
-Video: Using noise as a regularizer
-Video: Introduction to the full Bayesian approach
-Video: The Bayesian interpretation of weight decay
-Video: MacKay's quick and dirty method of setting weight costs
-Graded: Lecture 9 Quiz
-Graded: Programming assignment 3: Optimization and generalization
+**Preventing overfitting**
 
+* Approach 1: Get more data
+
+    Almost always the best bet if you have enough compute power to train on more data
+
+* Approach 2: Use a model that has the right capability
+
+    * enough to fit the right regularity
+    * not enough to fit spurious regularities (if they are weaker)
+
+* Approach 3: Average many different models
+
+    * Use models with different forms
+    * Or train the model with different subsets of training data (this is called "bagging")
+
+* Approach 4: (Bayesian) Use a single neural network architecture, but average different prediction made by many different weight vectors.
+
+**The capability can be controlled by many ways**
+
+* Architecture: Limit the number of hidden layers and the number of units per layer
+* Early Stopping: Start with small weights and stop the learning before it overfits
+* Weight decay: Penalize large weights using penalties or constrains on the their squared values (L2 penalty) or absolute values (L1 penalty)
+
+Typically a combination of these methods is used.
 # Week 10
 
 Combining multiple neural networks to improve generalization

@@ -2,6 +2,7 @@
 title: Full Stack Web Development by The Hong Kong University of Science and Technology
 layout: post
 published: true
+last_modified_at: 2017-07-09
 category: [Full Stack, Web, HTML, CSS, JavaScript, BootStrap, Angular, Node.js]
 ---
 
@@ -187,11 +188,19 @@ Two commonly used automation tools: Grunt and Gulp. The comparison between them:
 * constant()
 * value()
 
-
-
 ## Week 4: Client-Server Communication and Angular Testing
 
-# Course 4: Server-side Development with NodeJS
+# Course 4: Multiplatform Mobile App Development with Web Technologies
+
+## week 1: Hybrid Mobile App Development Frameworks: An Introduction
+
+## week 2: More Ionic CSS and JavaScript
+
+## week 3: Deploying your App
+
+## week 4: Accessing Native Capabilities of Devices: Cordova and ngCordova
+
+# Course 5: Server-side Development with NodeJS
 
 ## Week 1: Introduction to Server-side Development
 
