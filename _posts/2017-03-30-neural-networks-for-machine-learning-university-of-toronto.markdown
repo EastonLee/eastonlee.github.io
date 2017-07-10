@@ -202,8 +202,25 @@ Four effective ways to learn an RNN
 * Architecture: Limit the number of hidden layers and the number of units per layer
 * Early Stopping: Start with small weights and stop the learning before it overfits
 * Weight decay: Penalize large weights using penalties or constrains on the their squared values (L2 penalty) or absolute values (L1 penalty)
+* Noise: Add noise to the weights or the activities
 
 Typically a combination of these methods is used.
+
+**Cross-validation: a better way to choose meta parameters**
+
+Divide the total dataset into three subsets:
+
+* Training data: is used for learning the parameters of the model.
+* Validation data: is not used for learning but is used to decide what settings of the meta parameters work best.
+* Test data: is used to get a final, unbiased estimate of how well the network works. We expect this estimate to be worse than on the validation data.
+
+**N-fold cross-validation** (Easton's note: This definition of N-fold cross-validation is different from elsewhere)
+
+We could divide the total dataset into one final test set and N other subset and train on all but one of the subsets to get N different estimate of the validation error rate.
+
+**Noise can be used as regularizer against overfit in input, output and activating functions**
+
+ 
 # Week 10
 
 Combining multiple neural networks to improve generalization
