@@ -220,19 +220,12 @@ We could divide the total dataset into one final test set and N other subset and
 
 **Noise can be used as regularizer against overfit in input, output and activating functions**
 
- 
 # Week 10
 
-Combining multiple neural networks to improve generalization
-This module we look at why it helps to combine multiple neural networks to improve generalization 
-5 videos, 1 reading
-Reading: Lecture Slides (and resources)
-Video: Why it helps to combine models
-Video: Mixtures of Experts
-Video: The idea of full Bayesian learning
-Video: Making full Bayesian learning practical
-Video: Dropout
-Graded: Lecture 10 Quiz
+**Making models differ by changing their training data**
+
+* Bagging: Train different models on different subsets of the data
+* Boosting: Train a sequence of low capability models. Weight the training cases differently for each model in the sequence.
 
 # Week 11
 
