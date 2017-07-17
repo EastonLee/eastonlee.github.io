@@ -2,9 +2,11 @@
 title: Neural Networks for Machine Learning University of Toronto
 layout: post
 published: true
-last_modified_at: 2017-07-09
+last_modified_at: 2017-07-16
 category: [Neural Network, Machine Learning, Course Notes]
 ---
+
+Update on 7/16: This course is damn hard! And poor organized somewhere, for example, in week 13 one video is missing and the last two questions in the quiz are wrong themselves. But all in all it's still a course in depth.
 
 This is a note for Course: Neural Networks for Machine Learning University of Toronto
 
