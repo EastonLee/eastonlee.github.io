@@ -39,7 +39,15 @@ Competitive Programming can sharpen one's mind, sometimes helps with one's inter
 | $$\le 10^5$$ | $$O(nlog_2n)$$             | Merge sort, building a segment tree                        |
 | $$\le 10^6$$ | $$O(n), O(log_2n), O(1)$$  | Usually, contest problem have $$n<10^6$$ (to read input)     |
 
+# Data Structure
 
-
+* Static arrays
+* Dynamic arrays
+* Linked lists
+* Stacks
+* Queues
+* Priority Queues
+* Sets
+* Maps
 
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
