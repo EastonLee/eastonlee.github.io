@@ -10,7 +10,7 @@ category: [English, Communication]
 
 <!--more-->
 
-# Week 1:
+# Week 1: Presentation Introductions
 
 **Introduction**
 1. greeting
@@ -24,3 +24,9 @@ category: [English, Communication]
 * Bring a prop
 * Ask a "show of hands" question
 * Show a thought-provoking picture
+
+# Week 2: What to Include in a Speech
+
+# Week 3: Preparing to Present
+
+# Week 4: Other Tips for Presenting
