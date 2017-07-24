@@ -25,6 +25,11 @@ category: [English, Communication]
 * Ask a "show of hands" question
 * Show a thought-provoking picture
 
+**Modes of Persuasion**
+* pathos: the audience's emotion
+* ethos: the speaker's credibility
+* logos: step-by-step logic
+
 # Week 2: What to Include in a Speech
 
 # Week 3: Preparing to Present

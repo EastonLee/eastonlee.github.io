@@ -1,7 +1,7 @@
 ---
 title: "Entrepreneurship: Financing and Profitability by University of Pennsylvania"
 layout: post
-published: true
+published: false
 last_modified_at: 2017-07-22
 image: https://upload.wikimedia.org/wikipedia/commons/c/ce/Rivertree_thirds_md.gif
 category: [Entrepreneurship]
