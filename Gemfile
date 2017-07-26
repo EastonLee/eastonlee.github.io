@@ -29,10 +29,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'json'
 require 'json'
 require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+#versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
 # easton: gem can't find github-pages 130
-gem 'github-pages', versions['github-pages']
+gem 'github-pages'#, versions['github-pages']
 
 gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'
