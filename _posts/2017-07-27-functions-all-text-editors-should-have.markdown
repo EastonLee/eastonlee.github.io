@@ -6,7 +6,7 @@ category:   [tools, Text Editor]
 ---
 
 A handy text editor should have these functions built in or have plugins making up the missing piece.
-v
+
 <!--more-->
 
 |     Functions      |   SublimeText Plugins   |          VS Code Extensions          |
