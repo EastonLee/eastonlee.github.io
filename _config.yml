@@ -20,7 +20,7 @@ description: "This is Easton Lee's personal site where he places his thoughts in
 baseurl:  # the subpath of your site, e.g. /blog
 url: http://eastonlee.com # the base hostname & protocol for your site, e.g. http://example.com
 enforce_ssl: eastonlee.com
-twitter_username: ImEastonLee
+twitter_username: EastonLeeCS
 github_username:  EastonLee
 linkedin_username:  EastonLee
 # logo is for BlogPosting > publisher > logo > url schemas.
