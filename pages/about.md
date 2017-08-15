@@ -30,7 +30,7 @@ Know more about me:
   "image": "https://eastonlee.b0.upaiyun.com/avatar.jpg",
   "sameAs": [
     "https://github.com/EastonLee",
-    "https://twitter.com/ImEastonLee",
+    "https://twitter.com/EastonLeeCS",
     "https://linkedin.com/in/EastonLee",
     "https://plus.google.com/107628046279641393605"
   ]
