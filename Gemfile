@@ -34,5 +34,5 @@ require 'open-uri'
 # easton: gem can't find github-pages 130
 gem 'github-pages'#, versions['github-pages']
 
-gem 'jekyll-sitemap'
+# gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'
