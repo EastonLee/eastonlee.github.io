@@ -18,12 +18,14 @@ email: me@eastonlee.com
 #description: > # this means to ignore newlines until "baseurl:"
 description: "This is Easton Lee's personal site where he places his thoughts into words and records his achievements."
 baseurl:  # the subpath of your site, e.g. /blog
-url: http://eastonlee.com # the base hostname & protocol for your site, e.g. http://example.com
-enforce_ssl: eastonlee.com
+# this "url" will determine the urls generated in sitemap.xml which is submitted to Google
+# I found my site is not findable when setting url to http://eastonlee.com
+# now switching back to https
+url: https://eastonlee.com # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: EastonLeeCS
 github_username:  EastonLee
 linkedin_username:  EastonLee
-# logo is for BlogPosting > publisher > logo > url schemas.
+# logo is for structured data BlogPosting > publisher > logo > url schemas.
 logo: https://eastonlee.b0.upaiyun.com/organization_logo.png
 # setting image fixed for SEO is not sensible
 # image is for BlogPosting > image schemas.
@@ -31,7 +33,7 @@ defaults:
   - 
     scope:
       path: ""
-      type: "post"
+      type: "posts"
     values:
       image: 
         "@type": ImageObject
