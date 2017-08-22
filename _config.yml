@@ -101,7 +101,7 @@ collections:
     permalink: /:collection/:year/:month/:day/:title/
 
 podcast_url: https://eastonlee.com/feed/podcast
-podcast_album_art: /assets/avatar.jpg
+podcast_album_art: http://eastonlee.com/assets/avatar.png
 podcast_title: What to learn next?
 podcast_owner: Easton Lee
 podcast_email: me@eastonlee.com
