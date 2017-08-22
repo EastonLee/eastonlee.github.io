@@ -40,6 +40,11 @@ defaults:
         path: https://eastonlee.b0.upaiyun.com/avatar.jpg
         height: 1000
         width: 1000  
+  - 
+    scope:
+      type: "podcasts"
+    values:
+      layout: podcast
 
 # Build settings
 markdown: kramdown
@@ -86,3 +91,25 @@ disqus:
   shortname: eastonlee
 
 excerpt_separator: <!--more-->
+
+feed:
+  path: atom.xml
+
+collections:
+  podcasts:
+    output: true
+    permalink: /:collection/:year/:month/:day/:title/
+
+podcast_url: https://eastonlee.com/feed/podcast
+podcast_album_art: /assets/avatar.jpg
+podcast_title: What to learn next?
+podcast_owner: Easton Lee
+podcast_email: me@eastonlee.com
+podcast_category: Education
+podcast_subcategory_one: Training
+podcast_subcategory_two: Language Courses
+podcast_explicit: "no"
+podcast_author: Easton Lee
+podcast_description: Easton Lee will recommend and review Open Courses in this podcast.
+podcast_summary: Easton Lee will recommend and review Open Courses in this podcast.
+podcast_subtitle: What to learn next?

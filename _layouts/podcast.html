@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<div class="text-center">
+    <audio controls="controls">
+        Your browser does not support the <code>audio</code> element.
+        <source src="{{ page.podcast_link }}" type="audio/wav">
+    </audio>
+</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <td>Title</td>
+            <td>{{ page.title }}</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>{{ site.url }}{{ page.url }}</td>
+        </tr>
+        <tr>
+            <td>Comments</td>
+            <td>{{ site.url }}{{ page.url }}#comments</td>
+        </tr>
+        <tr>
+            <td>pubDate</td>
+            <td>{{ page.date | date: "%a, %d %b %Y %T %z" }}</td>
+        </tr>
+        <tr>
+            <td>dc:creator</td>
+            <td>{{ site.author | cdata_escape }}</td>
+        </tr>
+        {% for category in page.categories %}
+        <tr>
+            <td>category</td>
+            <td>{{ category | cdata_escape }}</td>
+        </tr>
+        {% endfor %}
+        {% for category in page.tags %}
+        <tr>
+            <td>category</td>
+            <td>{{ category | cdata_escape }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>guid</td>
+            <td>{{ site.url }}{% if page.podcast_guid %}/{{ page.podcast_guid }}{% else %}{{ page.url }}{% endif %}</td>
+        </tr>
+        <tr>
+            <td>description</td>
+            <td>{{ page.excerpt | strip_html | truncatewords: 50 | expand_urls: site.url | cdata_escape }}</td>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td>{{ page.content | expand_urls: site.url | cdata_escape }}</td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>{{ page.podcast_link }}</td>
+        </tr>
+        <tr>
+            <td>length</td>
+            <td>{{ page.podcast_length }}</td>
+        </tr>
+        <tr>
+            <td>itunes:subtitle</td>
+            <td>{{ page.excerpt | strip_html | truncatewords: 50 | expand_urls: site.url | cdata_escape }}</td>
+        </tr>
+        <tr>
+            <td>itunes:summary</td>
+            <td>{{ page.content | expand_urls: site.url | cdata_escape }}</td>
+        </tr>
+        <tr>
+            <td>itunes:author</td>
+            <td>{{ site.podcast_author }}</td>
+        </tr>
+        <tr>
+            <td>itunes:image href</td>
+            <td>{{ site.url }}{{ site.podcast_album_art }}</td>
+        </tr>
+        <tr>
+            <td>itunes:explicit</td>
+            <td>{{ site.podcast_explicit }}</td>
+        </tr>
+        <tr>
+            <td>itunes:duration</td>
+            <td>{{ page.podcast_duration }}</td>
+        </tr>
+    </tbody>
+</table>
