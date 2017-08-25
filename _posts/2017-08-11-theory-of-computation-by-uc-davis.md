@@ -11,7 +11,7 @@ Automata itself is a very interesting thesis and Turing Machines which Automata 
 
 <!--more-->
 
-The Finite Automata part is taught by the Stanford University [here](https://lagunita.stanford.edu/courses/course-v1:ComputerScience+Automata+Fall2016/info) but is a little tedious, and the rest part is taught by UC Davis [here](http://web.cs.ucdavis.edu/~rogaway/classes/120/fall12/lectures.html) and videos can be found [here](https://www.youtube.com/playlist?list=PLslgisHe5tBM8UTCt1f66oMkpmjCblzkt), the latter UC Davis course is much easier to understand and a lot of fun.
+The Finite Automata part is taught by the Stanford University [here](https://lagunita.stanford.edu/courses/course-v1:ComputerScience+Automata+Fall2016/info) but is a little tedious, and the rest part is taught by UC Davis as [ECS120](http://web.cs.ucdavis.edu/~rogaway/classes/120/fall12/lectures.html) and videos can be found [here](https://www.youtube.com/playlist?list=PLslgisHe5tBM8UTCt1f66oMkpmjCblzkt), the latter UC Davis course is much easier to understand and a lot of fun.
 
 # Introduction
 
@@ -28,7 +28,7 @@ When developing solutions to real problems, we often confront the limitations of
 * State changes in response to inputs.
 * Rules that tell how the state changes in response to inputs are called transitions.
 
-![Finite Automata Example](https://cdn.eastonlee.com/blog/2017-08-17-computer-science-automata-theory-by-stanford/Finite%20Automata%20Example.png)
+![Finite Automata Example](https://cdn.eastonlee.com/blog/2017-08-11-theory-of-computation-by-uc-davis/Finite%20Automata%20Example.png)
 
 **Acceptance of Inputs**
 * Given a sequence of inputs (input string ), start in the start state and follow the transition from each symbol in turn.
@@ -47,7 +47,7 @@ When developing solutions to real problems, we often confront the limitations of
 * Accept if any sequence of choices leads to a final state.
 * Intuitively: the NFA always "guesses right."
 
-![Nondeterministic Finite Automata Example](https://cdn.eastonlee.com/blog/2017-08-17-computer-science-automata-theory-by-stanford/Nondeterministic%20Finite%20Automata%20Example.png)
+![Nondeterministic Finite Automata Example](https://cdn.eastonlee.com/blog/2017-08-11-theory-of-computation-by-uc-davis/Nondeterministic%20Finite%20Automata%20Example.png)
 
 **Equivalence of DFA’s, NFA’s**
 * A DFA can be turned into an NFA that accepts the same language.
@@ -66,7 +66,7 @@ When developing solutions to real problems, we often confront the limitations of
 * Final states = all those with a member of F.
 * The transition function δD is defined by: $$δ_D({q_1,...,q_k}, a)$$ is the union over all i = 1,...,k of $$δ_N(q_i, a)$$.
 
-![Subset Construction Example](https://cdn.eastonlee.com/blog/2017-08-17-computer-science-automata-theory-by-stanford/Subset%20Construction%20Example.png)
+![Subset Construction Example](https://cdn.eastonlee.com/blog/2017-08-11-theory-of-computation-by-uc-davis/Subset%20Construction%20Example.png)
 
 <!-- 
 **Turing-Machine Formalism**
@@ -108,7 +108,7 @@ Theorems:
 
 **Regular Language**
 
-A Language that is recognized by some DFA (DFSM) is called a regular language. A string set like this $$\left\{ A^nB^n where N \ge 0 \right\}$$ can't be recognized by a DFA, thus not a regular language.
+A Language that is recognized by some DFA (DFSM) is called a regular language. 
 
 Theorems:
 
@@ -135,6 +135,30 @@ A regular expression R is:
 
 Theorem: A language is regular if and only if it is described by some regular expressions.
 
-![Examples of converting a regex to an NFA](https://cdn.eastonlee.com/blog/2017-08-17-computer-science-automata-theory-by-stanford/Examples%20of%20converting%20a%20regex%20to%20an%20NFA.png)
+![Examples of converting a regex to an NFA](https://cdn.eastonlee.com/blog/2017-08-11-theory-of-computation-by-uc-davis/Examples%20of%20converting%20a%20regex%20to%20an%20NFA.png)
+
+# L5: Regular Expressions, Regular Languages and Non-Regular Languages 
+
+**Non-Regular Languages**
+
+A string set like this $$\left\{ 0^n1^n : N \ge 0 \right\}$$ can't be recognized by a DFA, thus not a regular language.
+
+# L6: The Pumping Lemma and Introduction to CFLs
+
+**Pumping Lemma**: 
+
+If A is a regular language, there is a number p (the pumping length) so that if w ∈ A and &#124;w&#124; ≥ p, then w may be divided into three substrings w = xyz, satisfying the conditions:
+
+1. for all i∈N, $$xy^iz∈A$$, 
+2. &#124;y&#124; > 0, and
+3. &#124;xy&#124; ≤ p.
+
+
+
+
+
+
+
+
 
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
