@@ -21,6 +21,9 @@ Know more about me:
 * [GitHub](https://github.com/EastonLee)
 * [LinkedIn](https://linkedin.com/in/EastonLee)
 
+<a class="twitter-timeline" href="https://twitter.com/EastonLeeCS?ref_src=twsrc%5Etfw"   data-width="520"
+  data-height="520">Tweets by Easton Lee</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
