@@ -1,7 +1,7 @@
 ---
 layout: page
 title: PGP public key
-permalink: /pgp/
+permalink: /pgp
 navigation_weight: 999
 ---
 
