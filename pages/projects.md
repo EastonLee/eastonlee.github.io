@@ -14,3 +14,5 @@ This tool collects data such as facial emotion, active window on screen, text in
 Behind the scenes it even knows what I'm reading every day and keeps doing the topic modeling to map the temporal shift of my interest.
 
 # [Time Series Prediction](https://ai.eastonlee.com/prediction)
+
+# [Lifelong Learning](/learning)
