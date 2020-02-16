@@ -2,7 +2,7 @@
 title: Why you should not use Ceph S3 for online services
 layout: post
 published: true
-last_modified_at: 2020--2-16
+last_modified_at: 2020-02-16
 image: https://ceph.com/wp-content/uploads/2016/07/Ceph_Logo_Stacked_RGB_120411_fa.png
 category: [distributed]
 ---
