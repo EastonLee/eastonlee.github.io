@@ -7,7 +7,9 @@ image: https://ceph.com/wp-content/uploads/2016/07/Ceph_Logo_Stacked_RGB_120411_
 category: [distributed]
 ---
 
-Next time when you use Amazon S3 service, don't take it for granted, because that's very successful engineering work, compared with who? Ceph. Now I'm talking about S3 based on Ceph (CephFS is another topic that will not be covered here).
+Next time when you use Amazon S3 service, don't take it for granted, because that's very successful engineering work, compared with who? Ceph. Now I'm talking about Ceph S3 (CephFS is another topic that will not be covered here).
+
+<!--more-->
 
 Every time you add OSDs, change their weight, or some disks fail the CRUSH map changes. When CURSH map changes, the cluster gets into recovery mode, PGs are moving around, some PGs are degraded or not available, the objects in those PGs can not be written or even read, if the moving PG is the index, things are much worse, then wait patiently before it recovers. If you are not experienced with Ceph, you can't even know how long the recovery will take.
 
