@@ -1,7 +1,7 @@
 ---
 title: Why you should not use Ceph S3 for online services
 layout: post
-published: true
+published: false
 last_modified_at: 2020-02-16
 image: https://ceph.com/wp-content/uploads/2016/07/Ceph_Logo_Stacked_RGB_120411_fa.png
 category: [distributed]
@@ -21,3 +21,6 @@ If you use Ceph S3 for offline service, go ahead and continue, weekly daily main
 
 So I don't think Ceph S3 is a production-ready good choice when your services can't endure downtime. Go ahead if your Ceph is for offline services or your users are very nice to wait or you have a bunch of Ceph devs or you are CERN (the future of human relies on Ceph now, good luck human (luckily they mainly use RBD, CephFS not S3)).
 
+Update:
+
+Disable iptalbes in the Ceph cluster, this will save you some trouble.
